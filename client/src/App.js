@@ -8,10 +8,19 @@ function App() {
     <div>
       <Head />
       <header>
+        <img className="logo" src="./assets/logo/thlogo.png" />
+      </header>
+      <body>
         <p className="sofia-pro">test 1</p>
         <p className="sofia-pro-bold">test 2</p>
         <p className="grease-pencil">test 3</p>
-      </header>
+      </body>
+      <footer>
+        <img
+          className="promotion"
+          src="./assets/promotion/nutella/NutellaBakedGoods_DMB_MiniPromo_2019_CE.png"
+        />
+      </footer>
     </div>
   )
 }
