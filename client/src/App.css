@@ -35,7 +35,7 @@
   font-weight: bold;
   font-style: normal;
 }
-
+/* END OF FONT FACES */
 .sofia-pro-black {
   font-family: "Sofia Pro";
   font-weight: 900;
@@ -52,3 +52,28 @@
   font-style: normal;
   color: black;
 }
+/* END OF FONT FAMILIES */
+/* HEADER STYLING */
+header {
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* END OF HEADER STYLING */
+/* FOOTER STYLING  */
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.promotion {
+  height: 20vh;
+  border-radius: 20px;
+}
+/* END OF FOOTER STYLING */
