@@ -2,7 +2,7 @@ const menuData = {
   hotBeverages: {
     coffee: {
       name: "Coffee",
-      image: "/public/assets/products/beverages/hot/coffee.png",
+      image: "/assets/products/beverages/hot/coffee.png",
       size: {
         small: {
           name: "SM",
@@ -33,7 +33,7 @@ const menuData = {
     },
     tea: {
       name: "Steeped Tea",
-      image: "/public/assets/products/beverages/hot/latte.png",
+      image: "/assets/products/beverages/hot/latte.png",
       size: {
         small: {
           name: "SM",
@@ -59,7 +59,7 @@ const menuData = {
     },
     frenchVanilla: {
       name: "French Vanilla",
-      image: "/public/assets/products/beverages/hot/frenchvanilla.png",
+      image: "/assets/products/beverages/hot/frenchvanilla.png",
       size: {
         small: {
           name: "SM",
@@ -80,6 +80,71 @@ const menuData = {
           name: "XL",
           price: 2.79,
           calories: 543
+        }
+      }
+    }
+  },
+  breakfast: {
+    homestyleBiscuit: {
+      name: "Homestyle Biscuits",
+      image: "/assets/products/breakfast/Sausage Biscuit HBS.png",
+      type: {
+        bacon: {
+          protein: bacon,
+          price: 3.79,
+          calories: 393
+        },
+        sausage: {
+          protein: sausage,
+          price: 3.79,
+          calories: 515
+        },
+        sausageAndBacon: {
+          protein: sausage_and_bacon,
+          price: 4.69,
+          calories: 575
+        }
+      }
+    },
+    englishMuffin: {
+      name: "English Muffins",
+      image: "/assets/products/breakfast/Bacon & Sausage HBS.png",
+      type: {
+        bacon: {
+          protein: bacon,
+          price: 3.79,
+          calories: 333
+        },
+        sausage: {
+          protein: sausage,
+          price: 3.79,
+          calories: 456
+        },
+        sausageAndBacon: {
+          protein: sausage_and_bacon,
+          price: 4.69,
+          calories: 513
+        }
+      }
+    },
+    farmersWrap: {
+      name: "Farmer's Wraps",
+      image: "/assets/products/breakfast/Sausage Farmers Wrap.png",
+      type: {
+        bacon: {
+          protein: bacon,
+          price: 4.39,
+          calories: 552
+        },
+        sausage: {
+          protein: sausage,
+          price: 4.39,
+          calories: 675
+        },
+        sausageAndBacon: {
+          protein: sausage_and_bacon,
+          price: 4.69,
+          calories: 513
         }
       }
     }
