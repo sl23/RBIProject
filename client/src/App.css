@@ -71,9 +71,9 @@ footer {
   width: 100%;
   display: flex;
   justify-content: center;
-  background: #c8102e;
 }
 .promotion {
   height: 20vh;
+  border-radius: 20px;
 }
 /* END OF FOOTER STYLING */

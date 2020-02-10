@@ -18,7 +18,7 @@ function App() {
       <footer>
         <img
           className="promotion"
-          src="./assets/promotion/nutella/NutellaBakedGoods_DMB_MiniPromo_2019_CE.png"
+          src="./assets/promotion/nutella/nutellaPromo.jpg"
         />
       </footer>
     </div>
