@@ -1,6 +1,8 @@
 import React from "react"
 import logo from "./logo.svg"
 import "./App.css"
+
+import ItemComponent from "./components/ItemComponent"
 import Head from "./components/head"
 import {
   BrowserRouter as Router,
@@ -25,6 +27,7 @@ function App() {
               <p className="sofia-pro">test 1</p>
               <p className="sofia-pro-bold">test 2</p>
               <p className="grease-pencil">test 3</p>
+              <ItemComponent />
             </body>
             <Link to="/promotion">
               <footer>
