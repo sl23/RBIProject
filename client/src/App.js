@@ -41,6 +41,11 @@ function App() {
           <Route path="/promotion">
             <PromoPage />
           </Route>
+          <Redirect
+            to={{
+              pathname: "/"
+            }}
+          />
         </Switch>
       </div>
     </Router>
