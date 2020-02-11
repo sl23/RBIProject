@@ -1,79 +1,16 @@
-@font-face {
-  font-family: "Grease Pencil";
-  src: url("./style/fonts/grease_pencilgrease_pencil.eot");
-  src: url("./style/fonts/grease_pencilgrease_pencil.eot?#iefix")
-      format("embedded-opentype"),
-    url("./style/fonts/grease_pencilgrease_pencil.woff2") format("woff2"),
-    url("./style/fonts/grease_pencilgrease_pencil.woff") format("woff"),
-    url("./style/fonts/grease_pencilgrease_pencil.ttf") format("truetype"),
-    url("./style/fonts/grease_pencilgrease_pencil.svg#grease_pencilgrease_pencil")
-      format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Sofia Pro";
-  src: url("./style/fonts/SofiaProBlack.eot");
-  src: url("./style/fonts/SofiaProBlack.eot?#iefix") format("embedded-opentype"),
-    url("./style/fonts/SofiaProBlack.woff2") format("woff2"),
-    url("./style/fonts/SofiaProBlack.woff") format("woff"),
-    url("./style/fonts/SofiaProBlack.ttf") format("truetype"),
-    url("./style/fonts/SofiaProBlack.svg#SofiaProBlack") format("svg");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Sofia Pro";
-  src: url("./style/fonts/SofiaPro-Bold.eot");
-  src: url("./style/fonts/SofiaPro-Bold.eot?#iefix") format("embedded-opentype"),
-    url("./style/fonts/SofiaPro-Bold.woff2") format("woff2"),
-    url("./style/fonts/SofiaPro-Bold.woff") format("woff"),
-    url("./style/fonts/SofiaPro-Bold.ttf") format("truetype"),
-    url("./style/fonts/SofiaPro-Bold.svg#SofiaPro-Bold") format("svg");
-  font-weight: bold;
-  font-style: normal;
-}
-/* END OF FONT FACES */
-.sofia-pro-black {
+/* USE THESE CSS PROPERTIES TO APPLY FONT STYLES IN YOUR STYLED COMPONENT */
+/* Sofia Pro Black {
   font-family: "Sofia Pro";
   font-weight: 900;
   font-style: normal;
 }
-.sofia-pro-bold {
+ Sofia Pro Bold {
   font-family: "Sofia Pro";
   font-weight: bold;
   font-style: normal;
 }
-.grease-pencil {
+  Grease Pencil {
   font-family: "Grease Pencil";
   font-weight: normal;
   font-style: normal;
-  color: black;
-}
-/* END OF FONT FAMILIES */
-/* HEADER STYLING */
-header {
-  display: flex;
-  justify-content: center;
-}
-.logo {
-  width: 30%;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* END OF HEADER STYLING */
-/* FOOTER STYLING  */
-footer {
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.promotion {
-  height: 20vh;
-  border-radius: 20px;
-}
-/* END OF FOOTER STYLING */
+  color: black; */
