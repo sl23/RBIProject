@@ -29,14 +29,14 @@ function App() {
               <p className="grease-pencil">test 3</p>
               <ItemComponent />
             </body>
-            <Link to="/promotion">
+            {/* <Link to="/promotion">
               <footer>
                 <img
                   className="promotion"
                   src="./assets/promotion/nutella/nutellaPromo.jpg"
                 />
               </footer>
-            </Link>
+            </Link> */}
           </Route>
           <Route path="/promotion">
             <PromoPage />
