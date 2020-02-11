@@ -51,11 +51,12 @@ const menuData = {
           price: 2.19,
           calories: 0
         }
-      ]
+      ],
+      blend: ["Original", "Dark Roast", "Decaf"]
     },
     {
       name: "French Vanilla",
-      image: "client/public/assets/products/beverages/hot/frenchvanilla.png",
+      image: "assets/products/beverages/hot/frenchvanilla.png",
       size: [
         {
           name: "Small",
@@ -77,7 +78,8 @@ const menuData = {
           price: 2.79,
           calories: 543
         }
-      ]
+      ],
+      blend: ["Original", "Dark Roast", "Decaf"]
     }
   ]
 }
