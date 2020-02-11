@@ -89,7 +89,6 @@ const menuData = {
             { size: "Large", price: 4.39, calories: 579 }
           ]
         }
-      ]
     }
   ]
 }

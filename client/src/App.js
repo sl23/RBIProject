@@ -1,9 +1,4 @@
 import React from "react"
-import logo from "./logo.svg"
-import "./App.css"
-
-import ItemComponent from "./components/ItemComponent"
-import Head from "./components/head"
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,7 +6,16 @@ import {
   Link,
   Redirect
 } from "react-router-dom"
+
+import logo from "./logo.svg"
+import "./App.css"
+import StyledFooter from "./components/styledComponents/StyledFooter"
+import ItemComponent from "./components/ItemComponent"
+import Head from "./components/head"
 import PromoPage from "./components/PromoPage"
+import Promotion from "./components/styledComponents/Promotion"
+import StyledHeader from "./components/styledComponents/StyledHeader"
+import Logo from "./components/styledComponents/Logo"
 
 function App() {
   return (
@@ -20,22 +24,17 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Head />
-            <header>
-              <img className="logo" src="./assets/logo/thlogo.png" />
-            </header>
+            <StyledHeader>
+              <Logo src="./assets/logo/thlogo.png" />
+            </StyledHeader>
             <body>
-              <p className="sofia-pro">test 1</p>
-              <p className="sofia-pro-bold">test 2</p>
-              <p className="grease-pencil">test 3</p>
               <ItemComponent />
             </body>
+
             <Link to="/promotion">
-              <footer>
-                <img
-                  className="promotion"
-                  src="./assets/promotion/nutella/nutellaPromo.jpg"
-                />
-              </footer>
+              <StyledFooter>
+                <Promotion src="./assets/promotion/nutella/nutellaPromo.jpg" />
+              </StyledFooter>
             </Link>
           </Route>
           <Route path="/promotion">
