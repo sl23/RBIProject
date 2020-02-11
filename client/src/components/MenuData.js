@@ -8,13 +8,30 @@ const menuData = {
           name: "Original Blend",
           details: [
             { size: "Small", price: 1.54, calories: 3 },
-            { name: "Medium", price: 1.76, calories: 4 },
-            { name: "Large", price: 1.92, calories: 5 },
-            { name: "Extra Large", price: 2.19, calories: 5 }
+            { size: "Medium", price: 1.76, calories: 4 },
+            { size: "Large", price: 1.92, calories: 5 },
+            { size: "Extra Large", price: 2.19, calories: 5 }
+          ]
+        },
+        {
+          name: "Dark Roast",
+          details: [
+            { size: "Small", price: 1.54, calories: 3 },
+            { size: "Medium", price: 1.76, calories: 4 },
+            { size: "Large", price: 1.92, calories: 5 },
+            { size: "Extra Large", price: 2.19, calories: 5 }
+          ]
+        },
+        {
+          name: "Decaf",
+          details: [
+            { size: "Small", price: 1.54, calories: 3 },
+            { size: "Medium", price: 1.76, calories: 4 },
+            { size: "Large", price: 1.92, calories: 5 },
+            { size: "Extra Large", price: 2.19, calories: 5 }
           ]
         }
-      ],
-      blend: ["Original", "Dark Roast", "Decaf"]
+      ]
     }
   ],
 
