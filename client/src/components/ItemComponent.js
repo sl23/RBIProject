@@ -16,21 +16,22 @@ const ItemComponent = () => {
             <img src={products.image} />
             <table>
               <tr>
+                <th>Blend</th>
                 {Object.values(products.size).map(size => {
                   return <th>{size.name}</th>
                 })}
               </tr>
-              <tr>
-                {Object.values(products.size).map(size => {
-                  console.log(size)
-                  return (
-                    <div>
-                      <td>{size.price}</td>
-                      <td>{size.calories}</td>
-                    </div>
-                  )
-                })}
-              </tr>
+              {Object.values(products.blend).map(blend => {
+                console.log(blend)
+                return (
+                  <tr>
+                    <td>{blend}</td>
+                    {Object.values(products.size).map(size => {
+                      return <td>${size.price}</td>
+                    })}
+                  </tr>
+                )
+              })}
             </table>
           </div>
         )

@@ -33,11 +33,13 @@ function App() {
               <p>test 3</p>
               <ItemComponent />
             </body>
+
             <Link to="/promotion">
               <StyledFooter>
                 <Promotion src="./assets/promotion/nutella/nutellaPromo.jpg" />
               </StyledFooter>
             </Link>
+
           </Route>
           <Route path="/promotion">
             <PromoPage />
