@@ -1,5 +1,7 @@
 import React from "react"
 import menuData from "./MenuData"
+import CategoryDisplay from "./styledComponents/categoryDisplay"
+import ProductImg from "./ProductImage"
 
 const ItemComponent = () => {
   // selects the menusection that is displayed. Can be modified to map over categories later on.
@@ -7,13 +9,13 @@ const ItemComponent = () => {
   console.log(menuData)
 
   return (
-    <div>
+    <CategoryDisplay>
       {menuData[menuSection].map(products => {
         //code for displaying individual product section
         return (
           <div>
             <div>{products.name}</div>
-            <img src={products.image} />
+            <ProductImg src={products.image} />
             <table>
               <tr>
                 <th>Blend</th>
@@ -36,7 +38,7 @@ const ItemComponent = () => {
           </div>
         )
       })}
-    </div>
+    </CategoryDisplay>
   )
 }
 

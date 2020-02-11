@@ -28,9 +28,6 @@ function App() {
               <Logo src="./assets/logo/thlogo.png" />
             </StyledHeader>
             <body>
-              <p>test 1</p>
-              <p>test 2</p>
-              <p>test 3</p>
               <ItemComponent />
             </body>
 
@@ -39,7 +36,6 @@ function App() {
                 <Promotion src="./assets/promotion/nutella/nutellaPromo.jpg" />
               </StyledFooter>
             </Link>
-
           </Route>
           <Route path="/promotion">
             <PromoPage />
