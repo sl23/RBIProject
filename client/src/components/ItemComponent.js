@@ -27,29 +27,21 @@ const ItemComponent = () => {
                   return <th>{detail.size}</th>
                 })}
               </tr>
-              <tr>
-                {Object.values(products.options).map(detail => {
-                  Object.values(detail).map(size => {
-                    console.log(size)
-                  })
-                  return (
-                    <div>
-                      <td>{detail.name}</td>
-                    </div>
-                  )
-                })}
-              </tr>
-              {console.log(products.options.detail)}
-              {/* {Object.values(products.options).map(blend => {
-                // console.log(blend)
+
+              {products.options.map(option => {
                 return (
                   <tr>
-                    <td>{blend}</td>
-                    {Object.values(products.size).map(size => {
-                      return <td>${size.price}</td>
+                    <td>{option.name}</td>
+                    {option.details.map(detail => {
+                      return (
+                        <td>
+                          ${detail.price} {detail.calories}Cals
+                        </td>
+                      )
                     })}
                   </tr>
-              ) })} */}
+                )
+              })}
             </table>
           </div>
         )

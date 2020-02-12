@@ -40,9 +40,13 @@ const menuData = {
       name: "Iced Coffee",
       image: "/assets/products/beverages/cold/Iced Latte Resized.png",
       options: [
-        { size: "Small", price: 1.79, calories: 116 },
-        { size: "Medium", price: 1.99, calories: 151 },
-        { size: "Large", price: 2.49, calories: 228 }
+        {
+          details: [
+            { size: "Small", price: 1.79, calories: 116 },
+            { size: "Medium", price: 1.99, calories: 151 },
+            { size: "Large", price: 2.49, calories: 228 }
+          ]
+        }
       ]
     },
 
