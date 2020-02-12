@@ -32,27 +32,38 @@ const menuData = {
           ]
         }
       ]
+    },
+    {
+      name: "Tea",
+      image: "/assets/products/beverages/hot/latte.png",
+      options: [
+        {
+          name: "",
+          details: [
+            { size: "Small", price: 1.54, calories: 0 },
+            { size: "Medium", price: 1.76, calories: 0 },
+            { size: "Large", price: 1.92, calories: 0 },
+            { size: "Extra Large", price: 2.19, calories: 0 }
+          ]
+        }
+      ]
+    },
+
+    {
+      name: "French Vanilla",
+      image: "/assets/products/beverages/hot/frenchvanilla.png",
+      options: [
+        {
+          name: "",
+          details: [
+            { size: "Small", price: 1.99, calories: 243 },
+            { size: "Medium", price: 2.29, calories: 309 },
+            { size: "Large", price: 2.59, calories: 411 },
+            { size: "Extra Large", price: 2.79, calories: 543 }
+          ]
+        }
+      ]
     }
-    // {
-    //   name: "Tea",
-    //   image: "/assets/products/beverages/hot/latte.png",
-    //   options: [
-    //     { size: "Small", price: 1.54, calories: 0 },
-    //     { size: "Medium", price: 1.76, calories: 0 },
-    //     { size: "Large", price: 1.92, calories: 0 },
-    //     { size: "Extra Large", price: 2.19, calories: 0 }
-    //   ]
-    // },
-    // {
-    //   name: "French Vanilla",
-    //   image: "/assets/products/beverages/hot/frenchvanilla.png",
-    //   options: [
-    //     { size: "Small", price: 1.99, calories: 243 },
-    //     { size: "Medium", price: 2.29, calories: 309 },
-    //     { size: "Large", price: 2.59, calories: 411 },
-    //     { size: "Extra Large", price: 2.79, calories: 543 }
-    //   ]
-    // }
   ],
 
   coldBeverages: [
