@@ -40,9 +40,14 @@ const menuData = {
       name: "Iced Coffee",
       image: "/assets/products/beverages/cold/Iced Latte Resized.png",
       options: [
-        { size: "Small", price: 1.79, calories: 116 },
-        { size: "Medium", price: 1.99, calories: 151 },
-        { size: "Large", price: 2.49, calories: 228 }
+        {
+          name: "Classic",
+          details: [
+            { size: "Small", price: 1.79, calories: 116 },
+            { size: "Medium", price: 1.99, calories: 151 },
+            { size: "Large", price: 2.49, calories: 228 }
+          ]
+        }
       ]
     },
 
@@ -94,59 +99,36 @@ const menuData = {
   ],
 
   lunch: [
-    // {
-    //   name: "Iced Coffee",
-    //   image: "/assets/products/beverages/cold/Iced Latte Resized.png",
-    //   options: [
-    //     { size: "Small", price: 1.79, calories: 116 },
-    //     { size: "Medium", price: 1.99, calories: 151 },
-    //     { size: "Large", price: 2.49, calories: 228 }
-    //   ]
-    // },
-    // {
-    //   name: "Iced Capp",
-    //   image: "/assets/products/beverages/cold/ChocolateChipIcedCapp.png",
-    //   options: [
-    //     {
-    //       name: "Classic",
-    //       details: [
-    //         { size: "Small", price: 2.59, calories: 221 },
-    //         { size: "Medium", price: 2.99, calories: 305 },
-    //         { size: "Large", price: 3.79, calories: 406 }
-    //       ]
-    //     }
-    //   ]
-    // },
-    // {
-    //   name: "Iced Capp Premium",
-    //   image: "/assets/products/beverages/cold/ChocolateChipIcedCapp.png",
-    //   options: [
-    //     {
-    //       name: "Vanilla",
-    //       details: [
-    //         { size: "Small", price: 3.09, calories: 351 },
-    //         { size: "Medium", price: 3.79, calories: 454 },
-    //         { size: "Large", price: 4.39, calories: 574 }
-    //       ]
-    //     },
-    //     {
-    //       name: "Caramel",
-    //       details: [
-    //         { size: "Small", price: 3.09, calories: 356 },
-    //         { size: "Medium", price: 3.79, calories: 460 },
-    //         { size: "Large", price: 4.39, calories: 581 }
-    //       ]
-    //     },
-    //     {
-    //       name: "Mocha",
-    //       details: [
-    //         { size: "Small", price: 3.09, calories: 353 },
-    //         { size: "Medium", price: 3.79, calories: 458 },
-    //         { size: "Large", price: 4.39, calories: 579 }
-    //       ]
-    //     }
-    //   ]
-    // }
+    {
+      name: "Turkey Bacon Club",
+      image: "/assets/products/lunch/turkey-bacon-club.png",
+      options: [
+        {
+          name: "Turkey Bacon Club",
+          details: [{ size: "", price: 5.99, calories: 518 }]
+        }
+      ]
+    },
+    {
+      name: "Ham & Cheddar",
+      image: "/assets/products/lunch/ham-and-cheese.png",
+      options: [
+        {
+          name: "Ham & Cheddar",
+          details: [{ size: "", price: 4.99, calories: 506 }]
+        }
+      ]
+    },
+    {
+      name: "Chili",
+      image: "/assets/products/lunch/chili.png",
+      options: [
+        {
+          name: "Chili",
+          details: [{ size: "", price: 4.69, calories: 468 }]
+        }
+      ]
+    }
   ]
 }
 
