@@ -3,7 +3,7 @@ import Logo from "./styledComponents/Logo"
 import StyledHeader from "./styledComponents/StyledHeader"
 import StyledFooter from "./styledComponents/StyledFooter"
 import promoData from "./promoData"
-import ProductImg from "./ProductImage"
+import ProductImg from "./styledComponents/ProductImage"
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",

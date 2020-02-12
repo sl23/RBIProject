@@ -1,24 +1,27 @@
 import React from "react"
 import menuData from "./MenuData"
 import CategoryDisplay from "./styledComponents/categoryDisplay"
-import ProductImg from "./ProductImage"
+import ProductImg from "./styledComponents/ProductImage"
 import { object } from "prop-types"
+import StyledRows from "./styledComponents/StyledTR"
+import StyledTable from "./styledComponents/InfoTable"
+import MenuContainer from "./styledComponents/menuContainer"
 
 const ItemComponent = () => {
   // selects the menusection that is displayed. Can be modified to map over categories later on.
-  const menuSection = "hotBeverages"
+  const menuSection = "coldBeverages"
   console.log(menuData)
 
   return (
-    <CategoryDisplay>
+    <MenuContainer>
       {menuData[menuSection].map(products => {
         //code for displaying individual product section
         console.log("Product Object: ", products)
         return (
-          <div>
-            <div>{products.name}</div>
+          <CategoryDisplay>
             <ProductImg src={products.image} />
-            <table>
+            <div>{products.name}</div>
+            <StyledTable>
               <tr>
                 <th>Options</th>
                 {products.options[0].details.map(detail => {
@@ -30,7 +33,7 @@ const ItemComponent = () => {
 
               {products.options.map(option => {
                 return (
-                  <tr>
+                  <StyledRows>
                     <td>{option.name}</td>
                     {option.details.map(detail => {
                       return (
@@ -39,14 +42,14 @@ const ItemComponent = () => {
                         </td>
                       )
                     })}
-                  </tr>
+                  </StyledRows>
                 )
               })}
-            </table>
-          </div>
+            </StyledTable>
+          </CategoryDisplay>
         )
       })}
-    </CategoryDisplay>
+    </MenuContainer>
   )
 }
 
