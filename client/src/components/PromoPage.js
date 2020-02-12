@@ -6,9 +6,8 @@ import promoData from "./promoData"
 
 import ProductImg from "./styledComponents/ProductImage"
 
-import RedSofiaProBold from "./styledComponents/RedSofiaProBold"
-import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
-
+import RedSofiaProBoldPromo from "./styledComponents/RedSofiaProBoldLarge"
+import BrownSofiaProPromo from "./styledComponents/BrownSofiaProPromo"
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -27,11 +26,13 @@ const PromoPage = () => {
           return (
             <div>
               <ProductImg src={pastry.image} />
-              <RedSofiaProBold>{pastry.name}</RedSofiaProBold>
-              <BrownSofiaPro>
+              <RedSofiaProBoldPromo>{pastry.name}</RedSofiaProBoldPromo>
+              <BrownSofiaProPromo>
                 Price: {formatter.format(pastry.price)}
-              </BrownSofiaPro>
-              <BrownSofiaPro>Calories: {pastry.calories}</BrownSofiaPro>
+              </BrownSofiaProPromo>
+              <BrownSofiaProPromo>
+                Calories: {pastry.calories}
+              </BrownSofiaProPromo>
             </div>
           )
         })}
