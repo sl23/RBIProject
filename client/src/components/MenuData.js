@@ -61,10 +61,6 @@ const menuData = {
       image: "/assets/products/beverages/cold/Iced Latte Resized.png",
       options: [
         {
-<<<<<<< HEAD
-          name: "Classic",
-=======
->>>>>>> d3cd7e10576c59941206a94168368c93930d652a
           details: [
             { size: "Small", price: 1.79, calories: 116 },
             { size: "Medium", price: 1.99, calories: 151 },
@@ -204,7 +200,6 @@ const menuData = {
       ]
     }
   ]
-  
 }
 
 export default menuData
