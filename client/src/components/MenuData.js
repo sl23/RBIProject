@@ -32,6 +32,26 @@ const menuData = {
           ]
         }
       ]
+    },
+    {
+      name: "Tea",
+      image: "/assets/products/beverages/hot/latte.png",
+      options: [
+        { size: "Small", price: 1.54, calories: 0 },
+        { size: "Medium", price: 1.76, calories: 0 },
+        { size: "Large", price: 1.92, calories: 0 },
+        { size: "Extra Large", price: 2.19, calories: 0 }
+      ]
+    },
+    {
+      name: "French Vanilla",
+      image: "/assets/products/beverages/hot/frenchvanilla.png",
+      options: [
+        { size: "Small", price: 1.99, calories: 243 },
+        { size: "Medium", price: 2.29, calories: 309 },
+        { size: "Large", price: 2.59, calories: 411 },
+        { size: "Extra Large", price: 2.79, calories: 543 }
+      ]
     }
   ],
 
@@ -41,7 +61,10 @@ const menuData = {
       image: "/assets/products/beverages/cold/Iced Latte Resized.png",
       options: [
         {
+<<<<<<< HEAD
           name: "Classic",
+=======
+>>>>>>> d3cd7e10576c59941206a94168368c93930d652a
           details: [
             { size: "Small", price: 1.79, calories: 116 },
             { size: "Medium", price: 1.99, calories: 151 },
@@ -97,7 +120,58 @@ const menuData = {
       ]
     }
   ],
-
+  breakfast: [
+    {
+      name: "Homestyle Biscuit Breakfast Sandwich",
+      image: "/assets/products/breakfast/Sausage Biscuit HBS.png",
+      options: [
+        {
+          name: "Sausage Homestyle Biscuit",
+          details: [{ size: "", price: 3.79, calories: 515 }]
+        },
+        {
+          name: "Bacon Homestyle Biscuit",
+          details: [{ size: "", price: 3.79, calories: 393 }]
+        },
+        {
+          name: "Sausage & Bacon Homestyle Biscuit",
+          details: [{ size: "", price: 4.69, calories: 575 }]
+        }
+      ]
+    },
+    {
+      name: "English Muffin Breakfast Sandwich",
+      image: "/assets/products/breakfast/Bacon & Sausage HBS.png",
+      options: [
+        {
+          name: "Sausage English Muffin",
+          details: [{ size: "", price: 3.79, calories: 456 }]
+        },
+        {
+          name: "Bacon English Muffin",
+          details: [{ size: "", price: 3.79, calories: 333 }]
+        },
+        {
+          name: "Sausage & Bacon English Muffin",
+          details: [{ size: "", price: 4.69, calories: 513 }]
+        }
+      ]
+    },
+    {
+      name: "Farmer's Wrap",
+      image: "/assets/products/breakfast/Sausage Farmers Wrap.png",
+      options: [
+        {
+          name: "Sausage Farmer's Wrap",
+          details: [{ size: "", price: 4.39, calories: 675 }]
+        },
+        {
+          name: "Bacon Farmer's Wrap",
+          details: [{ size: "", price: 4.39, calories: 552 }]
+        }
+      ]
+    }
+  ],
   lunch: [
     {
       name: "Turkey Bacon Club",
@@ -130,6 +204,7 @@ const menuData = {
       ]
     }
   ]
+  
 }
 
 export default menuData
