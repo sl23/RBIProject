@@ -168,6 +168,38 @@ const menuData = {
         }
       ]
     }
+  ],
+  lunch: [
+    {
+      name: "Turkey Bacon Club",
+      image: "/assets/products/lunch/turkey-bacon-club.png",
+      options: [
+        {
+          name: "Turkey Bacon Club",
+          details: [{ size: "", price: 5.99, calories: 518 }]
+        }
+      ]
+    },
+    {
+      name: "Ham & Cheddar",
+      image: "/assets/products/lunch/ham-and-cheese.png",
+      options: [
+        {
+          name: "Ham & Cheddar",
+          details: [{ size: "", price: 4.99, calories: 506 }]
+        }
+      ]
+    },
+    {
+      name: "Chili",
+      image: "/assets/products/lunch/chili.png",
+      options: [
+        {
+          name: "Chili",
+          details: [{ size: "", price: 4.69, calories: 468 }]
+        }
+      ]
+    }
   ]
 }
 
