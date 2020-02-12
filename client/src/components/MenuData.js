@@ -111,6 +111,58 @@ const menuData = {
         }
       ]
     }
+  ],
+  breakfast: [
+    {
+      name: "Homestyle Biscuit Breakfast Sandwich",
+      image: "/assets/products/breakfast/Sausage Biscuit HBS.png",
+      options: [
+        {
+          name: "Sausage Homestyle Biscuit",
+          details: [{ size: "", price: 3.79, calories: 515 }]
+        },
+        {
+          name: "Bacon Homestyle Biscuit",
+          details: [{ size: "", price: 3.79, calories: 393 }]
+        },
+        {
+          name: "Sausage & Bacon Homestyle Biscuit",
+          details: [{ size: "", price: 4.69, calories: 575 }]
+        }
+      ]
+    },
+    {
+      name: "English Muffin Breakfast Sandwich",
+      image: "/assets/products/breakfast/Bacon & Sausage HBS.png",
+      options: [
+        {
+          name: "Sausage English Muffin",
+          details: [{ size: "", price: 3.79, calories: 456 }]
+        },
+        {
+          name: "Bacon English Muffin",
+          details: [{ size: "", price: 3.79, calories: 333 }]
+        },
+        {
+          name: "Sausage & Bacon English Muffin",
+          details: [{ size: "", price: 4.69, calories: 513 }]
+        }
+      ]
+    },
+    {
+      name: "Farmer's Wrap",
+      image: "/assets/products/breakfast/Sausage Farmers Wrap.png",
+      options: [
+        {
+          name: "Sausage Farmer's Wrap",
+          details: [{ size: "", price: 4.39, calories: 675 }]
+        },
+        {
+          name: "Bacon Farmer's Wrap",
+          details: [{ size: "", price: 4.39, calories: 552 }]
+        }
+      ]
+    }
   ]
 }
 
