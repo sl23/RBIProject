@@ -8,6 +8,7 @@ import StyledTable from "./styledComponents/InfoTable"
 import MenuContainer from "./styledComponents/menuContainer"
 import RedSofiaProBold from "./styledComponents/RedSofiaProBold"
 import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
+import OptionCell from "./styledComponents/TableHeaderCell"
 
 const ItemComponent = ({ type }) => {
   // selects the menusection that is displayed. Can be modified to map over categories later on.
@@ -41,9 +42,9 @@ const ItemComponent = ({ type }) => {
                 {products.options.map(option => {
                   return (
                     <StyledRows>
-                      <td>
+                      <OptionCell>
                         <BrownSofiaPro>{option.name}</BrownSofiaPro>
-                      </td>
+                      </OptionCell>
                       {option.details.map(detail => {
                         return (
                           <td>
