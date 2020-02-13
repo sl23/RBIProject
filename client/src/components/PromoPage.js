@@ -1,13 +1,15 @@
 import React from "react"
 import Logo from "./styledComponents/Logo"
 import StyledHeader from "./styledComponents/StyledHeader"
-import StyledFooter from "./styledComponents/StyledFooter"
+import PromoFooter from "./styledComponents/promotionStyling/PromoFooter"
 import promoData from "./promoData"
-
 import ProductImg from "./styledComponents/ProductImage"
 
 import RedSofiaProBoldPromo from "./styledComponents/RedSofiaProBoldLarge"
 import BrownSofiaProPromo from "./styledComponents/BrownSofiaProPromo"
+import PromoComponent from "./styledComponents/promotionStyling/PromoComponent"
+import MainPageStyle from "./styledComponents/promotionStyling/MainPageStyle"
+import PromoBodyStyle from "./styledComponents/promotionStyling/PromoBodyStyle"
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -17,32 +19,31 @@ const formatter = new Intl.NumberFormat("en-US", {
 
 const PromoPage = () => {
   return (
-    <div>
+    <PromoBodyStyle>
       <StyledHeader>
         <Logo src="./assets/promotion/nutella/nutellaLogo.jpg" />
       </StyledHeader>
-      <body>
+      <MainPageStyle>
         {promoData.nutella.map(pastry => {
           return (
-            <div>
+            <PromoComponent>
               <ProductImg src={pastry.image} />
-              <RedSofiaProBoldPromo>{pastry.name}</RedSofiaProBoldPromo>
-              <BrownSofiaProPromo>
-                Price: {formatter.format(pastry.price)}
-              </BrownSofiaProPromo>
-              <BrownSofiaProPromo>
-                Calories: {pastry.calories}
-              </BrownSofiaProPromo>
-            </div>
+              <div>
+                <RedSofiaProBoldPromo>{pastry.name}</RedSofiaProBoldPromo>
+                <BrownSofiaProPromo>{formatter.format(pastry.price)}</BrownSofiaProPromo>
+                <BrownSofiaProPromo>{pastry.calories} Cals</BrownSofiaProPromo>
+              </div>
+            </PromoComponent>
+
           )
         })}
-      </body>
-      <StyledFooter>
+      </MainPageStyle>
+      <PromoFooter>
         Nutella® is a registered trademark of Ferrero S.p.A. All rights
         reserved. At participating restaurants for a limited time. TM & © Tim
         Hortons, 2020
-      </StyledFooter>
-    </div>
+      </PromoFooter>
+    </PromoBodyStyle>
   )
 }
 export default PromoPage
