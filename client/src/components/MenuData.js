@@ -134,15 +134,15 @@ const menuData = {
       image: "/assets/products/breakfast/Sausage Biscuit HBS.png",
       options: [
         {
-          name: "Sausage Homestyle Biscuit",
+          name: "Sausage",
           details: [{ size: "", price: 3.79, calories: 515 }]
         },
         {
-          name: "Bacon Homestyle Biscuit",
+          name: "Bacon",
           details: [{ size: "", price: 3.79, calories: 393 }]
         },
         {
-          name: "Sausage & Bacon Homestyle Biscuit",
+          name: "Sausage & Bacon",
           details: [{ size: "", price: 4.69, calories: 575 }]
         }
       ]
@@ -152,15 +152,15 @@ const menuData = {
       image: "/assets/products/breakfast/Bacon & Sausage HBS.png",
       options: [
         {
-          name: "Sausage English Muffin",
+          name: "Sausage",
           details: [{ size: "", price: 3.79, calories: 456 }]
         },
         {
-          name: "Bacon English Muffin",
+          name: "Bacon",
           details: [{ size: "", price: 3.79, calories: 333 }]
         },
         {
-          name: "Sausage & Bacon English Muffin",
+          name: "Sausage & Bacon",
           details: [{ size: "", price: 4.69, calories: 513 }]
         }
       ]
@@ -170,11 +170,11 @@ const menuData = {
       image: "/assets/products/breakfast/Sausage Farmers Wrap.png",
       options: [
         {
-          name: "Sausage Farmer's Wrap",
+          name: "Sausage",
           details: [{ size: "", price: 4.39, calories: 675 }]
         },
         {
-          name: "Bacon Farmer's Wrap",
+          name: "Bacon",
           details: [{ size: "", price: 4.39, calories: 552 }]
         }
       ]
