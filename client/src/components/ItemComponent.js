@@ -9,14 +9,13 @@ import MenuContainer from "./styledComponents/menuContainer"
 import RedSofiaProBold from "./styledComponents/RedSofiaProBold"
 import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
 
-const ItemComponent = () => {
+const ItemComponent = ({ type }) => {
   // selects the menusection that is displayed. Can be modified to map over categories later on.
-  const menuSection = "coldBeverages"
   console.log(menuData)
 
   return (
     <MenuContainer>
-      {menuData[menuSection].map(products => {
+      {menuData[type].map(products => {
         //code for displaying individual product section
         console.log("Product Object: ", products)
         return (

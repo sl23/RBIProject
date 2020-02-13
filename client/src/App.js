@@ -16,6 +16,7 @@ import PromoPage from "./components/PromoPage"
 import Promotion from "./components/styledComponents/Promotion"
 import StyledHeader from "./components/styledComponents/StyledHeader"
 import Logo from "./components/styledComponents/Logo"
+import menuData from "./components/MenuData"
 
 function App() {
   return (
@@ -28,7 +29,9 @@ function App() {
               <Logo src="./assets/logo/thlogo.png" />
             </StyledHeader>
             <body>
-              <ItemComponent />
+              {Object.keys(menuData).map(key => {
+                return <ItemComponent type={key} />
+              })}
             </body>
 
             <Link to="/promotion">
