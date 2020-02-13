@@ -1,15 +1,14 @@
 import React from "react"
 import Logo from "./styledComponents/Logo"
 import StyledHeader from "./styledComponents/StyledHeader"
-import StyledFooter from "./styledComponents/StyledFooter"
+import PromoFooter from "./styledComponents/promotionStyling/PromoFooter"
 import promoData from "./promoData"
-
 import ProductImg from "./styledComponents/ProductImage"
-
 import RedSofiaProBold from "./styledComponents/RedSofiaProBold"
 import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
-
-
+import PromoComponent from "./styledComponents/promotionStyling/PromoComponent"
+import MainPageStyle from "./styledComponents/promotionStyling/MainPageStyle"
+import PromoBodyStyle from "./styledComponents/promotionStyling/PromoBodyStyle"
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
@@ -18,30 +17,30 @@ const formatter = new Intl.NumberFormat("en-US", {
 
 const PromoPage = () => {
   return (
-    <div>
+    <PromoBodyStyle>
       <StyledHeader>
         <Logo src="./assets/promotion/nutella/nutellaLogo.jpg" />
       </StyledHeader>
-      <body>
+      <MainPageStyle>
         {promoData.nutella.map(pastry => {
           return (
-            <div>
+            <PromoComponent>
               <ProductImg src={pastry.image} />
-              <RedSofiaProBold>{pastry.name}</RedSofiaProBold>
-              <BrownSofiaPro>
-                Price: {formatter.format(pastry.price)}
-              </BrownSofiaPro>
-              <BrownSofiaPro>Calories: {pastry.calories}</BrownSofiaPro>
-            </div>
+              <div>
+                <RedSofiaProBold>{pastry.name}</RedSofiaProBold>
+                <BrownSofiaPro>{formatter.format(pastry.price)}</BrownSofiaPro>
+                <BrownSofiaPro>{pastry.calories} Cals</BrownSofiaPro>
+              </div>
+            </PromoComponent>
           )
         })}
-      </body>
-      <StyledFooter>
+      </MainPageStyle>
+      <PromoFooter>
         Nutella® is a registered trademark of Ferrero S.p.A. All rights
         reserved. At participating restaurants for a limited time. TM & © Tim
         Hortons, 2020
-      </StyledFooter>
-    </div>
+      </PromoFooter>
+    </PromoBodyStyle>
   )
 }
 export default PromoPage
