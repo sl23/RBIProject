@@ -4,11 +4,13 @@ import StyledHeader from "./styledComponents/StyledHeader"
 import PromoFooter from "./styledComponents/promotionStyling/PromoFooter"
 import promoData from "./promoData"
 import ProductImg from "./styledComponents/ProductImage"
-import RedSofiaProBold from "./styledComponents/RedSofiaProBold"
-import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
+
+import RedSofiaProBoldPromo from "./styledComponents/RedSofiaProBoldLarge"
+import BrownSofiaProPromo from "./styledComponents/BrownSofiaProPromo"
 import PromoComponent from "./styledComponents/promotionStyling/PromoComponent"
 import MainPageStyle from "./styledComponents/promotionStyling/MainPageStyle"
 import PromoBodyStyle from "./styledComponents/promotionStyling/PromoBodyStyle"
+
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
@@ -27,11 +29,12 @@ const PromoPage = () => {
             <PromoComponent>
               <ProductImg src={pastry.image} />
               <div>
-                <RedSofiaProBold>{pastry.name}</RedSofiaProBold>
-                <BrownSofiaPro>{formatter.format(pastry.price)}</BrownSofiaPro>
-                <BrownSofiaPro>{pastry.calories} Cals</BrownSofiaPro>
+                <RedSofiaProBoldPromo>{pastry.name}</RedSofiaProBoldPromo>
+                <BrownSofiaProPromo>{formatter.format(pastry.price)}</BrownSofiaProPromo>
+                <BrownSofiaProPromo>{pastry.calories} Cals</BrownSofiaProPromo>
               </div>
             </PromoComponent>
+
           )
         })}
       </MainPageStyle>

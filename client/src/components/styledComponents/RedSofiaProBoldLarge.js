@@ -1,9 +1,9 @@
 import styled from "styled-components"
-const RedSofiaProBold = styled.h1`
+const RedSofiaProBoldPromo = styled.h1`
   font-family: "Sofia Pro";
   font-weight: bold;
   font-style: normal;
   color: #c8102e;
-  font-size: 1.5em;
+  font-size: 4em;
 `
-export default RedSofiaProBold
+export default RedSofiaProBoldPromo

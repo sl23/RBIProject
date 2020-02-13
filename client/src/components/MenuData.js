@@ -37,20 +37,31 @@ const menuData = {
       name: "Tea",
       image: "/assets/products/beverages/hot/latte.png",
       options: [
-        { size: "Small", price: 1.54, calories: 0 },
-        { size: "Medium", price: 1.76, calories: 0 },
-        { size: "Large", price: 1.92, calories: 0 },
-        { size: "Extra Large", price: 2.19, calories: 0 }
+        {
+          name: "",
+          details: [
+            { size: "Small", price: 1.54, calories: 0 },
+            { size: "Medium", price: 1.76, calories: 0 },
+            { size: "Large", price: 1.92, calories: 0 },
+            { size: "Extra Large", price: 2.19, calories: 0 }
+          ]
+        }
       ]
     },
+
     {
       name: "French Vanilla",
       image: "/assets/products/beverages/hot/frenchvanilla.png",
       options: [
-        { size: "Small", price: 1.99, calories: 243 },
-        { size: "Medium", price: 2.29, calories: 309 },
-        { size: "Large", price: 2.59, calories: 411 },
-        { size: "Extra Large", price: 2.79, calories: 543 }
+        {
+          name: "",
+          details: [
+            { size: "Small", price: 1.99, calories: 243 },
+            { size: "Medium", price: 2.29, calories: 309 },
+            { size: "Large", price: 2.59, calories: 411 },
+            { size: "Extra Large", price: 2.79, calories: 543 }
+          ]
+        }
       ]
     }
   ],
@@ -61,6 +72,7 @@ const menuData = {
       image: "/assets/products/beverages/cold/Iced Latte Resized.png",
       options: [
         {
+          name: "Classic",
           details: [
             { size: "Small", price: 1.79, calories: 116 },
             { size: "Medium", price: 1.99, calories: 151 },
@@ -122,15 +134,15 @@ const menuData = {
       image: "/assets/products/breakfast/Sausage Biscuit HBS.png",
       options: [
         {
-          name: "Sausage Homestyle Biscuit",
+          name: "Sausage",
           details: [{ size: "", price: 3.79, calories: 515 }]
         },
         {
-          name: "Bacon Homestyle Biscuit",
+          name: "Bacon",
           details: [{ size: "", price: 3.79, calories: 393 }]
         },
         {
-          name: "Sausage & Bacon Homestyle Biscuit",
+          name: "Sausage & Bacon",
           details: [{ size: "", price: 4.69, calories: 575 }]
         }
       ]
@@ -140,15 +152,15 @@ const menuData = {
       image: "/assets/products/breakfast/Bacon & Sausage HBS.png",
       options: [
         {
-          name: "Sausage English Muffin",
+          name: "Sausage",
           details: [{ size: "", price: 3.79, calories: 456 }]
         },
         {
-          name: "Bacon English Muffin",
+          name: "Bacon",
           details: [{ size: "", price: 3.79, calories: 333 }]
         },
         {
-          name: "Sausage & Bacon English Muffin",
+          name: "Sausage & Bacon",
           details: [{ size: "", price: 4.69, calories: 513 }]
         }
       ]
@@ -158,12 +170,44 @@ const menuData = {
       image: "/assets/products/breakfast/Sausage Farmers Wrap.png",
       options: [
         {
-          name: "Sausage Farmer's Wrap",
+          name: "Sausage",
           details: [{ size: "", price: 4.39, calories: 675 }]
         },
         {
-          name: "Bacon Farmer's Wrap",
+          name: "Bacon",
           details: [{ size: "", price: 4.39, calories: 552 }]
+        }
+      ]
+    }
+  ],
+  lunch: [
+    {
+      name: "Turkey Bacon Club",
+      image: "/assets/products/lunch/turkey-bacon-club.png",
+      options: [
+        {
+          name: "Turkey Bacon Club",
+          details: [{ size: "", price: 5.99, calories: 518 }]
+        }
+      ]
+    },
+    {
+      name: "Ham & Cheddar",
+      image: "/assets/products/lunch/ham-and-cheese.png",
+      options: [
+        {
+          name: "Ham & Cheddar",
+          details: [{ size: "", price: 4.99, calories: 506 }]
+        }
+      ]
+    },
+    {
+      name: "Chili",
+      image: "/assets/products/lunch/chili.png",
+      options: [
+        {
+          name: "Chili",
+          details: [{ size: "", price: 4.69, calories: 468 }]
         }
       ]
     }
