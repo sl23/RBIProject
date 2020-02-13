@@ -3,7 +3,7 @@ const CategoryDisplay = styled.div`
   display: flex;
   height: auto;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-direction: row;
 `
 
