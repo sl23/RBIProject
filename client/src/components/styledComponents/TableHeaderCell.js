@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
 const OptionCell = styled.td`
-  width: 15vw;
+  width: 10vw;
 `
 export default OptionCell
