@@ -16,6 +16,11 @@ const SanityData = () => {
               en
             }
           }
+          ... on Item {
+            name {
+              en
+            }
+          }
         }
       }
     }
