@@ -1,8 +1,9 @@
 import styled from "styled-components"
 const MainPageStyle = styled.main`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1 fr 1 fr;
-  grid-row-gap: 3%;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  flex: 1 1 auto;
 `
 export default MainPageStyle

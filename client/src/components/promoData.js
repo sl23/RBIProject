@@ -1,7 +1,7 @@
 const promoData = {
   nutella: [
     {
-      name: "Croissant",
+      name: "Nutella Croissant",
       image: "/assets/promotion/nutella/croissant.png",
       price: 1.99,
       calories: 440
@@ -13,13 +13,13 @@ const promoData = {
       calories: 210
     },
     {
-      name: "Donut Sticks",
+      name: "Donut Sticks with Nutella Dip",
       image: "./assets/promotion/nutella/donutSticks.png",
       price: 1.99,
       calories: 270
     },
     {
-      name: "Filled Cookie",
+      name: "Filled Shortbread Cookie",
       image: "./assets/promotion/nutella/filledCookie.png",
       price: 1.49,
       calories: 360
