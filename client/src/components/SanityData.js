@@ -15,6 +15,13 @@ const SanityData = () => {
             name {
               en
             }
+            pickerAspects {
+              pickerAspectOptions {
+                name {
+                  en
+                }
+              }
+            }
           }
         }
       }

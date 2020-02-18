@@ -1,12 +1,18 @@
 import { ApolloClient } from "apollo-client"
 import { ApolloLink } from "apollo-link"
 import { createHttpLink } from "apollo-link-http"
-import { InMemoryCache } from "apollo-cache-inmemory"
+import { InMemoryCache, IntrospectionFragmentMatcher } from "apollo-cache-inmemory"
 import { onError } from "apollo-link-error"
+import introspectionQueryResultData from "./fragmentTypes.json"
+
+const fragmentMatcher = new IntrospectionFragmentMatcher({
+  introspectionQueryResultData
+})
 
 // tells apolloprovider connect info for backend database
 
 let apolloClient = null
+const cache = new InMemoryCache({ fragmentMatcher })
 
 const errorLink = onError(({ graphQLErrors }) => {
   if (graphQLErrors) graphQLErrors.map(({ message }) => console.log(message))
@@ -20,7 +26,7 @@ const httpLink = createHttpLink({
 
 apolloClient = new ApolloClient({
   link: ApolloLink.from([errorLink, httpLink]),
-  cache: new InMemoryCache()
+  cache
 })
 
 export default apolloClient
