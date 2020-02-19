@@ -5,5 +5,6 @@ const RedSofiaProBold = styled.h1`
   font-style: normal;
   color: #c8102e;
   font-size: 1.5em;
+  text-align: center;
 `
 export default RedSofiaProBold

@@ -20,8 +20,9 @@ const ItemComponent = ({ type }) => {
         console.log("Product Object: ", products)
         return (
           <CategoryDisplay>
-            <ProductImg src={products.image} />
             <div>
+              <ProductImg src={products.image} />
+
               <RedSofiaProBold>{products.name}</RedSofiaProBold>
 
               <StyledTable>
@@ -48,7 +49,8 @@ const ItemComponent = ({ type }) => {
                         return (
                           <td>
                             <BrownSofiaPro>
-                              ${detail.price} {detail.calories}Cals
+                              ${detail.price}
+                              <br /> {detail.calories}Cals
                             </BrownSofiaPro>
                           </td>
                         )

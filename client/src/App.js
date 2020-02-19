@@ -14,6 +14,7 @@ import "./App.css"
 import StyledFooter from "./components/styledComponents/StyledFooter"
 import ItemComponent from "./components/ItemComponent"
 import Head from "./components/head"
+import Body from "./components/styledComponents/Body"
 import PromoPage from "./components/PromoPage"
 import Promotion from "./components/styledComponents/Promotion"
 import StyledHeader from "./components/styledComponents/StyledHeader"
@@ -32,12 +33,12 @@ function App() {
               <StyledHeader>
                 <Logo src="./assets/logo/thlogo.png" />
               </StyledHeader>
-              <body>
+              <Body>
                 {Object.keys(menuData).map(key => {
                   return <ItemComponent type={key} />
                 })}
                 <SanityData />
-              </body>
+              </Body>
 
               <Link to="/promotion">
                 <StyledFooter>
