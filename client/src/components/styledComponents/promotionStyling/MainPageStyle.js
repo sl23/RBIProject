@@ -1,9 +1,10 @@
 import styled from "styled-components"
 const MainPageStyle = styled.main`
   overflow: hidden;
-  display: flex;
-  flex-flow: column wrap;
-  align-content: center;
-  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media screen and (max-width: 1400px) {
+    grid-template-columns: 1fr;
+  }
 `
 export default MainPageStyle
