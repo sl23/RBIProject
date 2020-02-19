@@ -72,16 +72,16 @@ const SanityData = () => {
 
   if (loading) {
     console.log("Loading")
-    return <div>Loading ...</div>
+    return <div>Loading...</div>
+
   }
 
   if (error) {
     console.log(error)
+
     return <div>Error...</div>
+
   }
-
-  console.log("Working")
-
   return (
     <div>
       {/* {console.log(data)} */}
