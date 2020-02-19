@@ -5,6 +5,7 @@ const MenuContainer = styled.div`
   min-height: 30vh;
   width: 100vw;
   // width: 33%;
+
 `
 
 export default MenuContainer
