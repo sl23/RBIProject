@@ -20,11 +20,11 @@ import StyledHeader from "./components/styledComponents/StyledHeader"
 import Logo from "./components/styledComponents/Logo"
 import menuData from "./components/MenuData"
 import SanityData from "./components/SanityData"
+import StyledClock from "./components/styledComponents/ClockStyle"
 
 import Clock from "./components/clock"
 
 import LanguageButton from "./components/styledComponents/LanguageButton"
-
 
 function App() {
   return (
@@ -36,11 +36,10 @@ function App() {
               <Head />
               <StyledHeader>
                 <Logo src="./assets/logo/thlogo.png" />
-
-                <Clock />
-
+                <StyledClock>
+                  <Clock />
+                </StyledClock>
                 <LanguageButton>EN/FR</LanguageButton>
-
               </StyledHeader>
               {/* <Body>
                 {Object.keys(menuData).map(key => {
