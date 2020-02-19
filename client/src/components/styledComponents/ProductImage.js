@@ -1,7 +1,6 @@
 import styled from "styled-components"
 const ProductImg = styled.img`
   width: 30vh;
-  margin-left: 5vw;
-  margin-right: 10vw;
+  min-width: 300px;
 `
 export default ProductImg

@@ -1,0 +1,120 @@
+export default {
+  title: 'Errors Translations',
+  name: 'errorsTranslations',
+  type: 'object',
+  options: {
+    collapsible: true,
+    collapsed: true,
+  },
+  fields: [
+    {
+      title: 'Can not get balance',
+      name: 'canNotGetBalance',
+      type: 'localeString',
+      description: '(TH Only)',
+    },
+    {
+      title: 'Can not get amount',
+      name: 'canNotGetAmount',
+      type: 'localeString',
+      description: '(TH Only) Can not get reload amount',
+    },
+    {
+      title: 'Can not scan',
+      name: 'canNotScan',
+      type: 'localeString',
+      description: '(TH Only) Can not scan card!',
+    },
+    {
+      title: 'Contact Tims Support',
+      name: 'contactTimsSupport',
+      type: 'localeString',
+      description: '(TH Only) Would you like to contact the Tim Hortons app support team?',
+    },
+    {
+      title: 'Can not modify',
+      name: 'canNotModify',
+      type: 'localeString',
+      description: '(TH Only) Can not be modified at selected location ',
+    },
+    {
+      title: 'Deactivation failed',
+      name: 'deactivationFailed',
+      type: 'localeString',
+      description: '(TH Only) Deactivation failed. Please try to contact us',
+    },
+    {
+      title: 'Dont see order',
+      name: 'dontSeeOrder',
+      type: 'localeString',
+      description:
+        '(TH Only) Dont see an order? These are mobile only. For a list including in-restaurant orders',
+    },
+    {
+      title: 'Error transfering TimCard',
+      name: 'errorTransferingTimCard',
+      type: 'localeString',
+      description: '(TH Only) Error transfering your TimCard. Please contact us.',
+    },
+    {
+      title: 'Error transfering card',
+      name: 'errorTransferingCard',
+      type: 'localeString',
+      description: '(TH Only) Error transfering your Card. Please contact us.',
+    },
+    {
+      title: 'Error with TimCard',
+      name: 'errorWithTimCard',
+      type: 'localeString',
+      description: '(TH Only) Something went wrong with your TimCard. Please try again.',
+    },
+    {
+      title: 'Failed deleting card',
+      name: 'failedDeletingCard',
+      type: 'localeString',
+      description: '(TH Only)',
+    },
+    {
+      title: 'Failed Facebook Login',
+      name: 'failedFacebookLogin',
+      type: 'localeString',
+      description: '(TH Only)',
+    },
+    {
+      title: 'Failed Firing Order',
+      name: 'failedFiringOrder',
+      type: 'localeString',
+      description: '(TH Only)',
+    },
+    {
+      title: 'Failed resending code',
+      name: 'failedResendingCode',
+      type: 'localeString',
+      description: '(TH Only) Failed resending verification code!',
+    },
+    {
+      title: 'Failed payment method',
+      name: 'failedPaymentMethod',
+      type: 'localeString',
+      description: '(TH Only) Failed syncing payment method',
+    },
+    {
+      title: 'Failed updating card',
+      name: 'failedUpdatingCard',
+      type: 'localeString',
+      description: '(TH Only) Failed updating primary card',
+    },
+    {
+      title: 'Incorrect TimCard',
+      name: 'incorrectCard',
+      type: 'localeString',
+      description: '(TH Only) Incorrect TimCard™ number or EAN',
+    },
+    {
+      title: 'Purchase did not count',
+      name: 'purchaseDidNotCount',
+      type: 'localeString',
+      description: '(TH Only) Your purchase did not count towards your next reward.',
+    },
+  ],
+};

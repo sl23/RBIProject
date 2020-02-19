@@ -1,5 +1,6 @@
 import styled from "styled-components"
 const BrownSofiaPro = styled.h2`
+  text-align: center;
   font-family: "Sofia Pro";
   font-weight: 400;
   font-style: normal;

@@ -1,0 +1,19 @@
+{
+  "name": "fe-sanity-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": {
+    "packages": ["frontend", "studio"]
+  },
+  "scripts": {
+    "start": "yarn concurrently yarn:studio:start yarn:frontend:start",
+    "frontend:start": "yarn workspace frontend start",
+    "studio:build": "yarn workspace studio build",
+    "studio:start": "yarn workspace studio dev"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
