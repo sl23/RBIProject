@@ -9,6 +9,7 @@ import MenuContainer from "./styledComponents/menuContainer"
 import RedSofiaProBold from "./styledComponents/RedSofiaProBold"
 import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
 import OptionCell from "./styledComponents/TableHeaderCell"
+import Body from "./styledComponents/Body"
 
 const SanityData = () => {
   const PULL_DATA = gql`
@@ -79,17 +80,15 @@ const SanityData = () => {
   if (loading) {
     console.log("Loading")
     return <div>Loading...</div>
-
   }
 
   if (error) {
     console.log(error)
 
     return <div>Error...</div>
-
   }
   return (
-    <div>
+    <Body>
       {/* {console.log(data)} */}
       {console.log("All Data: ", Object.values(data))}
       <h1>Sanity Data Test</h1>
@@ -101,126 +100,130 @@ const SanityData = () => {
           return (
             <div>
               <RedSofiaProBold>{section.name.en}</RedSofiaProBold>
-              {section.options.map(option => {
-                return (
-                  <CategoryDisplay>
-                    {/* {console.log("Option: ", option)} */}
 
-                    <ProductImg src={option.image.asset.url} />
-                    <div>
-                      <BrownSofiaPro>{option.name.en}</BrownSofiaPro>
+              <MenuContainer>
+                {section.options.map(option => {
+                  return (
+                    <CategoryDisplay>
+                      {/* {console.log("Option: ", option)} */}
 
-                      {/* conditional rendering to display different things based on whether its a section/item */}
-                      {option._type == "picker" && (
-                        <StyledTable>
-                          <tr>
-                            {option.pickerAspects[1] != null && (
-                              <th>
-                                <BrownSofiaPro>Options</BrownSofiaPro>
-                              </th>
-                            )}
+                      <div>
+                        <ProductImg src={option.image.asset.url} />
 
-                            {option.pickerAspects[0].pickerAspectOptions.map(
-                              pickerAspect => {
+                        <BrownSofiaPro>{option.name.en}</BrownSofiaPro>
+
+                        {/* conditional rendering to display different things based on whether its a section/item */}
+                        {option._type == "picker" && (
+                          <StyledTable>
+                            <tr>
+                              {option.pickerAspects[1] != null && (
+                                <th>
+                                  <BrownSofiaPro>Options</BrownSofiaPro>
+                                </th>
+                              )}
+
+                              {option.pickerAspects[0].pickerAspectOptions.map(
+                                pickerAspect => {
+                                  return (
+                                    <th>
+                                      <BrownSofiaPro>
+                                        {pickerAspect.name.en}
+                                      </BrownSofiaPro>
+                                    </th>
+                                  )
+                                }
+                              )}
+                            </tr>
+
+                            {option.pickerAspects[1] != null &&
+                              option.pickerAspects[1].pickerAspectOptions.map(
+                                (pickerAspect, pindex) => {
+                                  return (
+                                    <tr>
+                                      <td>{pickerAspect.name.en}</td>
+                                      {option.options
+                                        .filter((item, index) => {
+                                          // console.log("index: ", index)
+                                          // console.log(
+                                          //   "length: ",
+                                          //   option.pickerAspects[0]
+                                          //     .pickerAspectOptions.length
+                                          // )
+                                          // console.log("pindex: ", pindex)
+                                          // console.log(
+                                          //   "Upper ",
+                                          //   "index: ",
+                                          //   index,
+                                          //   option.pickerAspects[0]
+                                          //     .pickerAspectOptions.length *
+                                          //     (pindex + 1)
+                                          // )
+                                          // console.log(
+                                          //   "Lower: ",
+                                          //   "index: ",
+                                          //   index,
+                                          //   option.pickerAspects[0]
+                                          //     .pickerAspectOptions.length * pindex
+                                          // )
+                                          return (
+                                            index <
+                                              option.pickerAspects[0]
+                                                .pickerAspectOptions.length *
+                                                (pindex + 1) &&
+                                            index >=
+                                              option.pickerAspects[0]
+                                                .pickerAspectOptions.length *
+                                                pindex
+                                          )
+                                        })
+                                        .map(item => {
+                                          return (
+                                            <td>
+                                              ${item.option.prices[0].price}{" "}
+                                              <br />
+                                              {
+                                                item.option.nutrition.calories
+                                              }{" "}
+                                              Cals
+                                            </td>
+                                          )
+                                        })}
+                                    </tr>
+                                  )
+                                }
+                              )}
+
+                            {option.pickerAspects[1] == null &&
+                              option.options.map(item => {
                                 return (
-                                  <th>
-                                    <BrownSofiaPro>
-                                      {pickerAspect.name.en}
-                                    </BrownSofiaPro>
-                                  </th>
+                                  <td>
+                                    {console.log(item.option)}$
+                                    {item.option.prices[0].price} <br />
+                                    {item.option.nutrition.calories} Cals
+                                  </td>
                                 )
-                              }
-                            )}
-                          </tr>
-
-                          {option.pickerAspects[1] != null &&
-                            option.pickerAspects[1].pickerAspectOptions.map(
-                              (pickerAspect, pindex) => {
-                                return (
-                                  <tr>
-                                    <td>{pickerAspect.name.en}</td>
-                                    {option.options
-                                      .filter((item, index) => {
-                                        // console.log("index: ", index)
-                                        // console.log(
-                                        //   "length: ",
-                                        //   option.pickerAspects[0]
-                                        //     .pickerAspectOptions.length
-                                        // )
-                                        // console.log("pindex: ", pindex)
-                                        // console.log(
-                                        //   "Upper ",
-                                        //   "index: ",
-                                        //   index,
-                                        //   option.pickerAspects[0]
-                                        //     .pickerAspectOptions.length *
-                                        //     (pindex + 1)
-                                        // )
-                                        // console.log(
-                                        //   "Lower: ",
-                                        //   "index: ",
-                                        //   index,
-                                        //   option.pickerAspects[0]
-                                        //     .pickerAspectOptions.length * pindex
-                                        // )
-                                        return (
-                                          index <
-                                            option.pickerAspects[0]
-                                              .pickerAspectOptions.length *
-                                              (pindex + 1) &&
-                                          index >=
-                                            option.pickerAspects[0]
-                                              .pickerAspectOptions.length *
-                                              pindex
-                                        )
-                                      })
-                                      .map(item => {
-                                        return (
-                                          <td>
-                                            ${item.option.prices[0].price}{" "}
-                                            <br />
-                                            {
-                                              item.option.nutrition.calories
-                                            }{" "}
-                                            Cals
-                                          </td>
-                                        )
-                                      })}
-                                  </tr>
-                                )
-                              }
-                            )}
-
-                          {option.pickerAspects[1] == null &&
-                            option.options.map(item => {
-                              return (
-                                <td>
-                                  {console.log(item.option)}$
-                                  {item.option.prices[0].price} <br />
-                                  {item.option.nutrition.calories} Cals
-                                </td>
-                              )
-                            })}
-                        </StyledTable>
-                      )}
-                      {option._type == "item" && (
-                        <div>
-                          {console.log("item: ", option)}
-                          {console.log("price: ", option.prices[0].price)}$
-                          {option.prices[0].price}
-                          <br />
-                          {option.nutrition.calories} Cals
-                        </div>
-                      )}
-                    </div>
-                  </CategoryDisplay>
-                )
-              })}
+                              })}
+                          </StyledTable>
+                        )}
+                        {option._type == "item" && (
+                          <div>
+                            {console.log("item: ", option)}
+                            {console.log("price: ", option.prices[0].price)}$
+                            {option.prices[0].price}
+                            <br />
+                            {option.nutrition.calories} Cals
+                          </div>
+                        )}
+                      </div>
+                    </CategoryDisplay>
+                  )
+                })}
+              </MenuContainer>
             </div>
           )
         })
       })}
-    </div>
+    </Body>
   )
 }
 

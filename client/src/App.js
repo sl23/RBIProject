@@ -33,13 +33,12 @@ function App() {
               <StyledHeader>
                 <Logo src="./assets/logo/thlogo.png" />
               </StyledHeader>
-              <Body>
+              {/* <Body>
                 {Object.keys(menuData).map(key => {
                   return <ItemComponent type={key} />
                 })}
-                <SanityData />
-              </Body>
-
+              </Body> */}
+              <SanityData />
               <Link to="/promotion">
                 <StyledFooter>
                   <Promotion src="./assets/promotion/nutella/nutellaPromo.jpg" />
