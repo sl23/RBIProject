@@ -9,7 +9,6 @@ import {
 
 import { ApolloProvider } from "react-apollo-hooks"
 import apolloClient from "./apolloClient"
-
 import "./App.css"
 import StyledFooter from "./components/styledComponents/StyledFooter"
 import ItemComponent from "./components/ItemComponent"
@@ -21,6 +20,7 @@ import StyledHeader from "./components/styledComponents/StyledHeader"
 import Logo from "./components/styledComponents/Logo"
 import menuData from "./components/MenuData"
 import SanityData from "./components/SanityData"
+import LanguageButton from "./components/styledComponents/LanguageButton"
 
 function App() {
   return (
@@ -32,6 +32,7 @@ function App() {
               <Head />
               <StyledHeader>
                 <Logo src="./assets/logo/thlogo.png" />
+                <LanguageButton>EN/FR</LanguageButton>
               </StyledHeader>
               <Body>
                 {Object.keys(menuData).map(key => {

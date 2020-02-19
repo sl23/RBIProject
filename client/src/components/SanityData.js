@@ -17,12 +17,14 @@ const SanityData = () => {
         _id
         name {
           en
+          fr
         }
         options {
           ... on Picker {
             _type
             name {
               en
+              fr
             }
             image {
               asset {
@@ -33,6 +35,7 @@ const SanityData = () => {
               pickerAspectOptions {
                 name {
                   en
+                  fr
                 }
               }
             }
@@ -41,6 +44,7 @@ const SanityData = () => {
                 ... on Item {
                   name {
                     en
+                    fr
                   }
                   prices {
                     price
@@ -56,6 +60,7 @@ const SanityData = () => {
             _type
             name {
               en
+              fr
             }
             image {
               asset {
@@ -79,14 +84,12 @@ const SanityData = () => {
   if (loading) {
     console.log("Loading")
     return <div>Loading...</div>
-
   }
 
   if (error) {
     console.log(error)
 
     return <div>Error...</div>
-
   }
   return (
     <div>
