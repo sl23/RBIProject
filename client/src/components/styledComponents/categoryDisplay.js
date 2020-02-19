@@ -5,7 +5,7 @@ const CategoryDisplay = styled.div`
   justify-content: center;
   grid-template-columns: 1fr;
   height: auto;
-  border-style: solid;
+  // border-style: solid;
   width: 100vw;
 `
 
