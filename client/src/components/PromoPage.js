@@ -6,8 +6,8 @@ import Logo from "./styledComponents/Logo"
 import StyledHeader from "./styledComponents/StyledHeader"
 import PromoFooter from "./styledComponents/promotionStyling/PromoFooter"
 import PromoImg from "./styledComponents/promotionStyling/PromoImg"
-import RedSofiaProBoldLarge from "./styledComponents/RedSofiaProBoldLarge"
-import BrownSofiaProPromo from "./styledComponents/BrownSofiaProPromo"
+import RedSofiaProBoldLarge from "./styledComponents/promotionStyling/RedSofiaProBoldLarge"
+import BrownSofiaProPromo from "./styledComponents/promotionStyling/BrownSofiaProPromo"
 import PromoComponent from "./styledComponents/promotionStyling/PromoComponent"
 import MainPageStyle from "./styledComponents/promotionStyling/MainPageStyle"
 import PromoBodyStyle from "./styledComponents/promotionStyling/PromoBodyStyle"
@@ -25,11 +25,13 @@ const PromoPage = () => {
         _id
         name {
           en
+          fr
         }
         options {
           ... on Item {
             name {
               en
+              fr
             }
 
             image {

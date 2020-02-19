@@ -9,7 +9,6 @@ import {
 
 import { ApolloProvider } from "react-apollo-hooks"
 import apolloClient from "./apolloClient"
-
 import "./App.css"
 import StyledFooter from "./components/styledComponents/StyledFooter"
 import ItemComponent from "./components/ItemComponent"
@@ -21,7 +20,11 @@ import StyledHeader from "./components/styledComponents/StyledHeader"
 import Logo from "./components/styledComponents/Logo"
 import menuData from "./components/MenuData"
 import SanityData from "./components/SanityData"
+
 import Clock from "./components/clock"
+
+import LanguageButton from "./components/styledComponents/LanguageButton"
+
 
 function App() {
   return (
@@ -33,15 +36,18 @@ function App() {
               <Head />
               <StyledHeader>
                 <Logo src="./assets/logo/thlogo.png" />
+
                 <Clock />
+
+                <LanguageButton>EN/FR</LanguageButton>
+
               </StyledHeader>
-              <Body>
+              {/* <Body>
                 {Object.keys(menuData).map(key => {
                   return <ItemComponent type={key} />
                 })}
-                <SanityData />
-              </Body>
-
+              </Body> */}
+              <SanityData />
               <Link to="/promotion">
                 <StyledFooter>
                   <Promotion src="./assets/promotion/nutella/nutellaPromo.jpg" />
