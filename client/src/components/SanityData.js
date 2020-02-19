@@ -96,7 +96,6 @@ const SanityData = () => {
     <Body>
       {/* {console.log(data)} */}
       {console.log("All Data: ", Object.values(data))}
-      <h1>Sanity Data Test</h1>
 
       {Object.values(data).map(sections => {
         // console.log("All Sections: ", sections)
