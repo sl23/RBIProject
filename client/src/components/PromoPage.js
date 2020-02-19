@@ -5,8 +5,7 @@ import gql from "graphql-tag"
 import Logo from "./styledComponents/Logo"
 import StyledHeader from "./styledComponents/StyledHeader"
 import PromoFooter from "./styledComponents/promotionStyling/PromoFooter"
-import promoData from "./promoData"
-import ProductImg from "./styledComponents/ProductImage"
+import PromoImg from "./styledComponents/promotionStyling/PromoImg"
 import RedSofiaProBoldLarge from "./styledComponents/RedSofiaProBoldLarge"
 import BrownSofiaProPromo from "./styledComponents/BrownSofiaProPromo"
 import PromoComponent from "./styledComponents/promotionStyling/PromoComponent"
@@ -70,7 +69,7 @@ const PromoPage = () => {
         {data.Section.options.map(pastry => {
           return (
             <PromoComponent>
-              <ProductImg src={pastry.image.asset.url} />
+              <PromoImg src={pastry.image.asset.url} />
               <div>
                 <RedSofiaProBoldLarge>{pastry.name.en}</RedSofiaProBoldLarge>
                 <BrownSofiaProPromo>
@@ -91,6 +90,5 @@ const PromoPage = () => {
       </PromoFooter>
     </PromoBodyStyle>
   )
-  console.log("Promo Working")
 }
 export default PromoPage
