@@ -4,8 +4,7 @@ import {
   Switch,
   Route,
   Link,
-  Redirect,
-  useHistory
+  Redirect
 } from "react-router-dom"
 
 import { ApolloProvider } from "react-apollo-hooks"
@@ -21,7 +20,6 @@ import SanityData from "./components/SanityData"
 import StyledClock from "./components/styledComponents/ClockStyle"
 import Clock from "./components/clock"
 import StyledButton from "./components/styledComponents/StyledButton"
-import LanguageButton from "./components/LanguageButton"
 
 function App() {
   const [language, setLanguage] = useState("en")
