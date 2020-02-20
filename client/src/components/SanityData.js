@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useQuery } from "react-apollo-hooks"
 import gql from "graphql-tag"
 import CategoryDisplay from "./styledComponents/categoryDisplay"
@@ -12,6 +12,14 @@ import OptionCell from "./styledComponents/TableHeaderCell"
 import Body from "./styledComponents/Body"
 
 const SanityData = () => {
+  const order = [
+    "Breakfast",
+    "Hot Beverages",
+    "Baked Goods",
+    "Cold Beverages",
+    "Lunch"
+  ]
+
   const PULL_DATA = gql`
     query {
       allSections(where: { _id_not: "2b3f7af1-9526-419b-9de7-248fe4d5c006" }) {
@@ -92,21 +100,36 @@ const SanityData = () => {
 
     return <div>Error...</div>
   }
+  console.log("DATA: ", data)
+  console.log("DATA[0]: ", data[0])
+
+  const changedSections = data.allSections.reduce((acc, section) => {
+    acc[section.name.en] = section
+    return acc
+  }, {})
+  console.log("DATA All Sections: ", changedSections)
+
+  // useEffect(() => {
+  //   // data = [].concat(data).sort((a, b) => )
+  // })
   return (
     <Body>
+      {order.map(name => {
+        return <div>{changedSections[name].name.en}</div>
+      })}
       {/* {console.log(data)} */}
       {console.log("All Data: ", Object.values(data))}
 
       {Object.values(data).map(sections => {
-        // console.log("All Sections: ", sections)
-        return sections.map(section => {
-          console.log("Name: ", section.name.en)
+        console.log("All Sections: ", sections)
+        return order.map(name => {
+          console.log("Name: ", changedSections[name].name.en)
           return (
             <div>
-              <RedSofiaProBold>{section.name.en}</RedSofiaProBold>
+              <RedSofiaProBold>{changedSections[name].name.en}</RedSofiaProBold>
 
               <MenuContainer>
-                {section.options.map(option => {
+                {changedSections[name].options.map(option => {
                   return (
                     <CategoryDisplay>
                       {/* {console.log("Option: ", option)} */}
