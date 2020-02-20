@@ -144,7 +144,7 @@ const SanityData = ({ language }) => {
                                 (pickerAspect, pindex) => {
                                   return (
                                     <tr>
-                                      <td>{pickerAspect.name.en}</td>
+                                      <td>{pickerAspect.name[language]}</td>
                                       {option.options
                                         .filter((item, index) => {
                                           // console.log("index: ", index)
