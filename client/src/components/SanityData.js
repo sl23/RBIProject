@@ -84,7 +84,7 @@ const SanityData = ({ language }) => {
 
   if (loading) {
     console.log("Loading")
-    return <div>Loading...</div>
+    return <div>Brewing your coffee...</div>
   }
 
   if (error) {

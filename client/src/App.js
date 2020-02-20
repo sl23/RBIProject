@@ -18,6 +18,7 @@ import StyledHeader from "./components/styledComponents/StyledHeader"
 import Logo from "./components/styledComponents/Logo"
 import SanityData from "./components/SanityData"
 import StyledClock from "./components/styledComponents/ClockStyle"
+import Weather from "./components/Weather"
 import Clock from "./components/clock"
 import StyledButton from "./components/styledComponents/StyledButton"
 
@@ -47,7 +48,13 @@ function App() {
                   EN/FR
                 </StyledButton>
               </StyledHeader>
-              <SanityData language={language} />
+              {/* <Body>
+                {Object.keys(menuData).map(key => {
+                  return <ItemComponent type={key} />
+                })}
+              </Body> */}
+              <Weather />
+              <SanityData language={language}/>
               <Link to="/promotion">
                 <StyledFooter>
                   <Promotion src="./assets/promotion/nutella/nutellaPromo.jpg" />
@@ -57,7 +64,6 @@ function App() {
             <Route path="/promotion">
               <PromoPage language={language} />
             </Route>
-
             <Redirect
               to={{
                 pathname: "/"
