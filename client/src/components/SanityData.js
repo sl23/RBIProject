@@ -10,8 +10,11 @@ import RedSofiaProBold from "./styledComponents/RedSofiaProBold"
 import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
 import OptionCell from "./styledComponents/TableHeaderCell"
 import Body from "./styledComponents/Body"
+import LoadingScreen from "./styledComponents/LoadingScreen"
+import LoaderGIF from "./styledComponents/LoaderGif"
+import GreasePencil from "./styledComponents/GreasePencil"
 
-const SanityData = () => {
+const SanityData = ({ language }) => {
   const order = [
     "Breakfast",
     "Hot Beverages",
@@ -19,8 +22,6 @@ const SanityData = () => {
     "Cold Beverages",
     "Lunch"
   ]
-
-const SanityData = ({ language }) => {
   const PULL_DATA = gql`
     query {
       allSections(where: { _id_not: "2b3f7af1-9526-419b-9de7-248fe4d5c006" }) {
@@ -93,7 +94,12 @@ const SanityData = ({ language }) => {
 
   if (loading) {
     console.log("Loading")
-    return <div>Brewing your coffee...</div>
+    return (
+      <LoadingScreen>
+        <GreasePencil>Brewing your coffee...</GreasePencil>
+        <LoaderGIF src={require("../assets/logo/LogoLoader.gif")} />
+      </LoadingScreen>
+    )
   }
 
   if (error) {
@@ -128,7 +134,6 @@ const SanityData = ({ language }) => {
           return (
             <div>
               <RedSofiaProBold>{changedSections[name].name.en}</RedSofiaProBold>
-
 
               <MenuContainer>
                 {changedSections[name].options.map(option => {
@@ -238,7 +243,7 @@ const SanityData = ({ language }) => {
                           <div>
                             {/* {console.log("item: ", option)}
                             {console.log("price: ", option.prices[0].price)}$ */}
-                            {option.prices[0].price}
+                            ${option.prices[0].price}
                             <br />
                             {option.nutrition.calories} Cals
                           </div>
