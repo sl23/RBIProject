@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,23 +11,27 @@ import { ApolloProvider } from "react-apollo-hooks"
 import apolloClient from "./apolloClient"
 import "./App.css"
 import StyledFooter from "./components/styledComponents/StyledFooter"
-import ItemComponent from "./components/ItemComponent"
 import Head from "./components/head"
-import Body from "./components/styledComponents/Body"
 import PromoPage from "./components/PromoPage"
 import Promotion from "./components/styledComponents/Promotion"
 import StyledHeader from "./components/styledComponents/StyledHeader"
 import Logo from "./components/styledComponents/Logo"
-import menuData from "./components/MenuData"
 import SanityData from "./components/SanityData"
 import StyledClock from "./components/styledComponents/ClockStyle"
 import Weather from "./components/Weather"
-
 import Clock from "./components/clock"
-
-import LanguageButton from "./components/styledComponents/LanguageButton"
+import StyledButton from "./components/styledComponents/StyledButton"
 
 function App() {
+  const [language, setLanguage] = useState("en")
+  const changeLanguage = () => {
+    if (language === "en") {
+      setLanguage("fr")
+    } else {
+      setLanguage("en")
+    }
+    console.log(language)
+  }
   return (
     <ApolloProvider client={apolloClient}>
       <Router>
@@ -40,7 +44,9 @@ function App() {
                 <StyledClock>
                   <Clock />
                 </StyledClock>
-                <LanguageButton>EN/FR</LanguageButton>
+                <StyledButton onClick={() => changeLanguage()}>
+                  EN/FR
+                </StyledButton>
               </StyledHeader>
               {/* <Body>
                 {Object.keys(menuData).map(key => {
@@ -48,7 +54,7 @@ function App() {
                 })}
               </Body> */}
               <Weather />
-              <SanityData />
+              <SanityData language={language}/>
               <Link to="/promotion">
                 <StyledFooter>
                   <Promotion src="./assets/promotion/nutella/nutellaPromo.jpg" />
@@ -56,9 +62,8 @@ function App() {
               </Link>
             </Route>
             <Route path="/promotion">
-              <PromoPage />
+              <PromoPage language={language} />
             </Route>
-
             <Redirect
               to={{
                 pathname: "/"
