@@ -18,7 +18,7 @@ const formatter = new Intl.NumberFormat("en-US", {
   minimumFractionDigits: 2
 })
 
-const PromoPage = () => {
+const PromoPage = ({ language }) => {
   const PULL_DATA = gql`
     query {
       Section(id: "2b3f7af1-9526-419b-9de7-248fe4d5c006") {
@@ -63,7 +63,6 @@ const PromoPage = () => {
   }
   return (
     <PromoBodyStyle>
-      {console.log(data.Section.options)}
       <StyledHeader>
         <Logo src="./assets/promotion/nutella/nutellaLogo.jpg" />
       </StyledHeader>
@@ -71,9 +70,12 @@ const PromoPage = () => {
         {data.Section.options.map(pastry => {
           return (
             <PromoComponent>
+              {console.log(language)}
               <PromoImg src={pastry.image.asset.url} />
               <div>
-                <RedSofiaProBoldLarge>{pastry.name.en}</RedSofiaProBoldLarge>
+                <RedSofiaProBoldLarge>
+                  {pastry.name[language]}
+                </RedSofiaProBoldLarge>
                 <BrownSofiaProPromo>
                   {formatter.format(pastry.prices[0]["price"])}
                 </BrownSofiaProPromo>
