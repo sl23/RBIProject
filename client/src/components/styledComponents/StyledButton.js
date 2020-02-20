@@ -1,5 +1,5 @@
 import styled from "styled-components"
-const LanguageButton = styled.button`
+const StyledButton = styled.button`
   position: absolute;
   top: 0;
   right: 0;
@@ -14,4 +14,4 @@ const LanguageButton = styled.button`
   padding: 5px 10px;
   margin: 5px;
 `
-export default LanguageButton
+export default StyledButton
