@@ -11,7 +11,7 @@ import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
 import OptionCell from "./styledComponents/TableHeaderCell"
 import Body from "./styledComponents/Body"
 
-const SanityData = () => {
+const SanityData = ({ language }) => {
   const PULL_DATA = gql`
     query {
       allSections(where: { _id_not: "2b3f7af1-9526-419b-9de7-248fe4d5c006" }) {
@@ -95,15 +95,15 @@ const SanityData = () => {
   return (
     <Body>
       {/* {console.log(data)} */}
-      {console.log("All Data: ", Object.values(data))}
+      {/* {console.log("All Data: ", Object.values(data))} */}
 
       {Object.values(data).map(sections => {
         // console.log("All Sections: ", sections)
         return sections.map(section => {
-          console.log("Name: ", section.name.en)
+          // console.log("Name: ", section.name.en)
           return (
             <div>
-              <RedSofiaProBold>{section.name.en}</RedSofiaProBold>
+              <RedSofiaProBold>{section.name[language]}</RedSofiaProBold>
 
               <MenuContainer>
                 {section.options.map(option => {
@@ -114,7 +114,7 @@ const SanityData = () => {
                       <div>
                         <ProductImg src={option.image.asset.url} />
 
-                        <BrownSofiaPro>{option.name.en}</BrownSofiaPro>
+                        <BrownSofiaPro>{option.name[language]}</BrownSofiaPro>
 
                         {/* conditional rendering to display different things based on whether its a section/item */}
                         {option._type == "picker" && (
@@ -131,7 +131,7 @@ const SanityData = () => {
                                   return (
                                     <th>
                                       <BrownSofiaPro>
-                                        {pickerAspect.name.en}
+                                        {pickerAspect.name[language]}
                                       </BrownSofiaPro>
                                     </th>
                                   )
@@ -144,7 +144,7 @@ const SanityData = () => {
                                 (pickerAspect, pindex) => {
                                   return (
                                     <tr>
-                                      <td>{pickerAspect.name.en}</td>
+                                      <td>{pickerAspect.name[language]}</td>
                                       {option.options
                                         .filter((item, index) => {
                                           // console.log("index: ", index)
@@ -201,7 +201,7 @@ const SanityData = () => {
                               option.options.map(item => {
                                 return (
                                   <td>
-                                    {console.log(item.option)}$
+                                    {/* {console.log(item.option)}$ */}
                                     {item.option.prices[0].price} <br />
                                     {item.option.nutrition.calories} Cals
                                   </td>
@@ -211,8 +211,8 @@ const SanityData = () => {
                         )}
                         {option._type == "item" && (
                           <div>
-                            {console.log("item: ", option)}
-                            {console.log("price: ", option.prices[0].price)}$
+                            {/* {console.log("item: ", option)}
+                            {console.log("price: ", option.prices[0].price)}$ */}
                             {option.prices[0].price}
                             <br />
                             {option.nutrition.calories} Cals
