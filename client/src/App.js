@@ -21,6 +21,7 @@ import Logo from "./components/styledComponents/Logo"
 import menuData from "./components/MenuData"
 import SanityData from "./components/SanityData"
 import StyledClock from "./components/styledComponents/ClockStyle"
+import Weather from "./components/Weather"
 
 import Clock from "./components/clock"
 
@@ -46,6 +47,7 @@ function App() {
                   return <ItemComponent type={key} />
                 })}
               </Body> */}
+              <Weather />
               <SanityData />
               <Link to="/promotion">
                 <StyledFooter>
