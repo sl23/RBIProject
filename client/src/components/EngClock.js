@@ -28,7 +28,7 @@ const time = new Date().toLocaleString()
 //   }
 // }
 
-const Clock = () => {
+const EngClock = () => {
   const [time, setTime] = useState(new Date().toLocaleString())
 
   //setTime wil change time variable automatically.
@@ -91,12 +91,13 @@ const Clock = () => {
         <GreasePencil>Hello Night Owl!</GreasePencil>
       )}
       <BrownSofiaPro>
-        Today is {dayOfWeek[currentDay]} {months[currentMonth]} {currentDate},
+        Today is {dayOfWeek[currentDay]}, {months[currentMonth]} {currentDate},
         <span> </span>
-        {currentYear} and the local time is currently {currentHour}:{currentMin}
+        {currentYear}
+        <span> </span>and the local time is currently {currentHour}:{currentMin}
       </BrownSofiaPro>
     </div>
   )
 }
 
-export default Clock
+export default EngClock

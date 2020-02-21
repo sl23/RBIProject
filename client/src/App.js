@@ -61,7 +61,7 @@ function App() {
                 })}
               </Body> */}
               <GreetingStyle>
-                <Greeting />
+                <Greeting language={langExtractor} />
               </GreetingStyle>
               <SanityData language={langExtractor} />
               <Link to="/promotion">

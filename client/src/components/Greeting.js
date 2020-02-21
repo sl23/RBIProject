@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react"
-import Weather from "./Weather"
-import Clock from "./clock"
+import EngWeather from "./EngWeather"
+import FrWeather from "./FrWeather"
+import EngClock from "./EngClock"
+import FrClock from "./FrClock"
 import GreetingStyle from "./styledComponents/GreetingStyle"
-const Greeting = () => {
+const Greeting = ({ language }) => {
   return (
     <GreetingStyle>
-      <Clock />
-      <Weather />
+      {language === "en" ? <EngClock /> : <FrClock />}
+      {language === "en" ? <EngWeather /> : <FrWeather />}
     </GreetingStyle>
   )
 }

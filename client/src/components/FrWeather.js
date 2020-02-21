@@ -14,7 +14,7 @@ import thunderstorm from "../assets/animated/thunder.svg"
 import CenteringDiv from "./styledComponents/CenteringDiv"
 import WeatherIcon from "./styledComponents/WeatherIcon"
 
-const Weather = () => {
+const FrWeather = () => {
   const [data, setData] = useState(null)
 
   async function fetchData() {
@@ -33,17 +33,17 @@ const Weather = () => {
     fetchData()
   }, [])
 
-  if (!data) return <div>Loading...</div>
+  if (!data) return <div>Chargement...</div>
   let iconCode = data.weather[0].icon
   let iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png"
   let main = data.weather[0].main
 
   return (
     <CenteringDiv>
-      <BrownSofiaPro>
-        Today's Forecast: <span></span>
+      {/* <BrownSofiaPro>
+        Prévisions du jour: <span></span>
         {data.weather[0].description}
-      </BrownSofiaPro>
+      </BrownSofiaPro> */}
       {(function() {
         if (main == "Clear" && hour < 18 && hour > 6) {
           return <WeatherIcon src={dayIcon} />
@@ -75,4 +75,4 @@ const Weather = () => {
   )
 }
 
-export default Weather
+export default FrWeather
