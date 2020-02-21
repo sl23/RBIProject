@@ -1,9 +1,8 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useQuery } from "react-apollo-hooks"
 import gql from "graphql-tag"
 import CategoryDisplay from "./styledComponents/categoryDisplay"
 import ProductImg from "./styledComponents/ProductImage"
-import StyledRows from "./styledComponents/StyledTR"
 import StyledTable from "./styledComponents/InfoTable"
 import MenuContainer from "./styledComponents/menuContainer"
 import RedSofiaProBold from "./styledComponents/RedSofiaProBold"
@@ -11,7 +10,6 @@ import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
 import Body from "./styledComponents/Body"
 import LoadingScreen from "./styledComponents/LoadingScreen"
 import LoaderGIF from "./styledComponents/LoaderGif"
-import GreasePencil from "./styledComponents/GreasePencil"
 
 const SanityData = ({ language }) => {
   const time = new Date().getHours()
@@ -119,7 +117,6 @@ const SanityData = ({ language }) => {
     console.log("Loading")
     return (
       <LoadingScreen>
-        <GreasePencil>Brewing your coffee...</GreasePencil>
         <LoaderGIF src={require("../assets/logo/LogoLoader.gif")} />
       </LoadingScreen>
     )
@@ -130,8 +127,8 @@ const SanityData = ({ language }) => {
 
     return <div>Error...</div>
   }
-  console.log("DATA: ", data)
-  console.log("DATA[0]: ", data[0])
+  // console.log("DATA: ", data)
+  // console.log("DATA[0]: ", data[0])
 
   const changedSections = data.allSections.reduce((acc, section) => {
     acc[section.name.en] = section
@@ -151,12 +148,14 @@ const SanityData = ({ language }) => {
       {/* {console.log("All Data: ", Object.values(data))} */}
 
       {Object.values(data).map(sections => {
-        console.log("All Sections: ", sections)
+        // console.log("All Sections: ", sections)
         return order.map(name => {
-          console.log("Name: ", changedSections[name].name.en)
+          // console.log("Name: ", changedSections[name].name.en)
           return (
             <div>
-              <RedSofiaProBold>{changedSections[name].name.en}</RedSofiaProBold>
+              <RedSofiaProBold>
+                {changedSections[name].name[language]}
+              </RedSofiaProBold>
 
               <MenuContainer>
                 {changedSections[name].options.map(option => {
