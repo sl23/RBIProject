@@ -8,20 +8,43 @@ import StyledTable from "./styledComponents/InfoTable"
 import MenuContainer from "./styledComponents/menuContainer"
 import RedSofiaProBold from "./styledComponents/RedSofiaProBold"
 import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
-import OptionCell from "./styledComponents/TableHeaderCell"
 import Body from "./styledComponents/Body"
 import LoadingScreen from "./styledComponents/LoadingScreen"
 import LoaderGIF from "./styledComponents/LoaderGif"
 import GreasePencil from "./styledComponents/GreasePencil"
 
 const SanityData = ({ language }) => {
-  const order = [
-    "Breakfast",
-    "Hot Beverages",
-    "Baked Goods",
-    "Cold Beverages",
-    "Lunch"
-  ]
+  const time = new Date().getHours()
+  console.log("time: ", time)
+
+  let order = []
+
+  if (time > 4 && time <= 11) {
+    order = [
+      "Breakfast",
+      "Hot Beverages",
+      "Baked Goods",
+      "Lunch",
+      "Cold Beverages"
+    ]
+  } else if (time > 11 && time <= 2) {
+    order = [
+      "Lunch",
+      "Hot Beverages",
+      "Baked Goods",
+      "Breakfast",
+      "Cold Beverages"
+    ]
+  } else {
+    order = [
+      "Baked Goods",
+      "Hot Beverages",
+      "Cold Beverages",
+      "Breakfast",
+      "Lunch"
+    ]
+  }
+
   const PULL_DATA = gql`
     query {
       allSections(where: { _id_not: "2b3f7af1-9526-419b-9de7-248fe4d5c006" }) {
