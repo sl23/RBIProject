@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react"
 import Weather from "./Weather"
 import Clock from "./clock"
-import GreetingBackground from "./styledComponents/GreetingBackground"
-import day from "../assets/daypart/day.png"
-
+import GreetingStyle from "./styledComponents/GreetingStyle"
 const Greeting = () => {
   return (
-    <div>
+    <GreetingStyle>
       <Clock />
       <Weather />
-      <GreetingBackground src={day} />
-    </div>
+    </GreetingStyle>
   )
 }
 export default Greeting

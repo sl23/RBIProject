@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import nightIcon from "../assets/animated/night.svg"
 import dayIcon from "../assets/animated/day.svg"
-import rainIcon from "../assets/animated/rainy-1.svg"
 
 import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
 import cloudDay from "../assets/animated/cloudy-day.svg"
@@ -12,6 +11,8 @@ import rain7 from "../assets/animated/rainy-7.svg"
 import rain6 from "../assets/animated/rainy-6.svg"
 import snow from "../assets/animated/snowy-5.svg"
 import thunderstorm from "../assets/animated/thunder.svg"
+import CenteringDiv from "./styledComponents/CenteringDiv"
+import WeatherIcon from "./styledComponents/WeatherIcon"
 
 const Weather = () => {
   const [data, setData] = useState(null)
@@ -38,42 +39,39 @@ const Weather = () => {
   let main = data.weather[0].main
 
   return (
-    <div>
+    <CenteringDiv>
       <BrownSofiaPro>
         Today's Forecast: <span></span>
         {data.weather[0].description}
       </BrownSofiaPro>
-
-      <div>
-        {(function() {
-          if (main == "Clear" && hour < 18 && hour > 6) {
-            return <img src={dayIcon} />
-          } else if (main == "Clear" && hour > 18) {
-            return <img src={nightIcon} />
-          } else if (main == "Clear" && hour > 0 && hour < 6) {
-            return <img src={nightIcon} />
-          } else if (main == "Clouds" && hour < 18 && hour > 6) {
-            return <img src={cloudDay} />
-          } else if (main == "Clouds" && hour > 18) {
-            return <img src={cloudyNight} />
-          } else if (main == "Rain" && iconCode == 500) {
-            return <img src={rain1} />
-          } else if (main == "Rain" && iconCode == 501) {
-            return <img src={rain2} />
-          } else if (main == "Rain" && iconCode == 503) {
-            return <img src={rain6} />
-          } else if (main == "Rain" && iconCode == 504) {
-            return <img src={rain7} />
-          } else if (main == "Snow") {
-            return <img src={snow} />
-          } else if (main == "Thunderstorm") {
-            return <img src={thunderstorm} />
-          } else {
-            return <img src={iconURL} />
-          }
-        })()}
-      </div>
-    </div>
+      {(function() {
+        if (main == "Clear" && hour < 18 && hour > 6) {
+          return <WeatherIcon src={dayIcon} />
+        } else if (main == "Clear" && hour > 18) {
+          return <WeatherIcon src={nightIcon} />
+        } else if (main == "Clear" && hour > 0 && hour < 6) {
+          return <WeatherIcon src={nightIcon} />
+        } else if (main == "Clouds" && hour < 18 && hour > 6) {
+          return <WeatherIcon src={cloudDay} />
+        } else if (main == "Clouds" && hour > 18) {
+          return <WeatherIcon src={cloudyNight} />
+        } else if (main == "Rain" && iconCode == 500) {
+          return <WeatherIcon src={rain1} />
+        } else if (main == "Rain" && iconCode == 501) {
+          return <WeatherIcon src={rain2} />
+        } else if (main == "Rain" && iconCode == 503) {
+          return <WeatherIcon src={rain6} />
+        } else if (main == "Rain" && iconCode == 504) {
+          return <WeatherIcon src={rain7} />
+        } else if (main == "Snow") {
+          return <WeatherIcon src={snow} />
+        } else if (main == "Thunderstorm") {
+          return <WeatherIcon src={thunderstorm} />
+        } else {
+          return <WeatherIcon src={iconURL} />
+        }
+      })()}
+    </CenteringDiv>
   )
 }
 
