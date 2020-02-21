@@ -231,7 +231,7 @@ const SanityData = ({ language }) => {
                               option.options.map(item => {
                                 return (
                                   <td>
-                                    {/* {console.log(item.option)}$ */}
+                                    {/* {console.log(item.option)}$ */}$
                                     {item.option.prices[0].price} <br />
                                     {item.option.nutrition.calories} Cals
                                   </td>
