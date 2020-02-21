@@ -13,7 +13,6 @@ import rain6 from "../assets/animated/rainy-6.svg"
 import snow from "../assets/animated/snowy-5.svg"
 import thunderstorm from "../assets/animated/thunder.svg"
 
-
 const Weather = () => {
   const [data, setData] = useState(null)
 
@@ -39,18 +38,12 @@ const Weather = () => {
   let main = data.weather[0].main
 
   return (
-
-    <BrownSofiaPro>
-      Today's Forecast: <span></span>
-      {data.weather[0].description}
-      <img src={iconURL} />
-      {/* <img src={nightIcon} />
-      <img src={rainIcon} /> */}
-    </BrownSofiaPro>
-
     <div>
-      {console.log(hour)}
-      {data.weather[0].description}
+      <BrownSofiaPro>
+        Today's Forecast: <span></span>
+        {data.weather[0].description}
+      </BrownSofiaPro>
+
       <div>
         {(function() {
           if (main == "Clear" && hour < 18 && hour > 6) {
@@ -81,7 +74,6 @@ const Weather = () => {
         })()}
       </div>
     </div>
-
   )
 }
 
