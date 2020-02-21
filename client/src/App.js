@@ -23,15 +23,25 @@ import Clock from "./components/clock"
 import StyledButton from "./components/styledComponents/StyledButton"
 
 function App() {
-  const [language, setLanguage] = useState("en")
+  const langCookie = document.cookie || "language=en"
+
+  const langExtractor = langCookie.split("=").pop()
+
+  const [language, setLanguage] = useState(langExtractor)
+  const setCookie = lang => {
+    return (document.cookie = `language=${lang}`)
+  }
+
   const changeLanguage = () => {
     if (language === "en") {
+      setCookie("fr")
       setLanguage("fr")
     } else {
+      setCookie("en")
       setLanguage("en")
     }
-    console.log(language)
   }
+
   return (
     <ApolloProvider client={apolloClient}>
       <Router>
@@ -54,7 +64,7 @@ function App() {
                 })}
               </Body> */}
               <Weather />
-              <SanityData language={language}/>
+              <SanityData language={langExtractor} />
               <Link to="/promotion">
                 <StyledFooter>
                   <Promotion src="./assets/promotion/nutella/nutellaPromo.jpg" />
@@ -62,7 +72,7 @@ function App() {
               </Link>
             </Route>
             <Route path="/promotion">
-              <PromoPage language={language} />
+              <PromoPage language={langExtractor} />
             </Route>
             <Redirect
               to={{
