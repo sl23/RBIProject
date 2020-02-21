@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import nightIcon from "../assets/animated/night.svg"
+import rainIcon from "../assets/animated/rainy-1.svg"
 const Weather = () => {
   const [data, setData] = useState(null)
 
@@ -25,6 +26,7 @@ const Weather = () => {
       {data.weather[0].description}
       <img src={iconURL} />
       <img src={nightIcon} />
+      <img src={rainIcon} />
     </div>
   )
 }

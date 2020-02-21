@@ -17,9 +17,8 @@ import Promotion from "./components/styledComponents/Promotion"
 import StyledHeader from "./components/styledComponents/StyledHeader"
 import Logo from "./components/styledComponents/Logo"
 import SanityData from "./components/SanityData"
-import StyledClock from "./components/styledComponents/ClockStyle"
-import Weather from "./components/Weather"
-import Clock from "./components/clock"
+import GreetingStyle from "./components/styledComponents/GreetingStyle"
+import Greeting from "./components/Greeting"
 import StyledButton from "./components/styledComponents/StyledButton"
 
 function App() {
@@ -51,9 +50,7 @@ function App() {
               <Head />
               <StyledHeader>
                 <Logo src="./assets/logo/thlogo.png" />
-                <StyledClock>
-                  <Clock />
-                </StyledClock>
+
                 <StyledButton onClick={() => changeLanguage()}>
                   EN/FR
                 </StyledButton>
@@ -63,7 +60,9 @@ function App() {
                   return <ItemComponent type={key} />
                 })}
               </Body> */}
-              <Weather />
+              <GreetingStyle>
+                <Greeting />
+              </GreetingStyle>
               <SanityData language={langExtractor} />
               <Link to="/promotion">
                 <StyledFooter>

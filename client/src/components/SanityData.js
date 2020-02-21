@@ -12,13 +12,37 @@ import LoadingScreen from "./styledComponents/LoadingScreen"
 import LoaderGIF from "./styledComponents/LoaderGif"
 
 const SanityData = ({ language }) => {
-  const order = [
-    "Breakfast",
-    "Hot Beverages",
-    "Baked Goods",
-    "Cold Beverages",
-    "Lunch"
-  ]
+  const time = new Date().getHours()
+  console.log("time: ", time)
+
+  let order = []
+
+  if (time > 4 && time <= 11) {
+    order = [
+      "Breakfast",
+      "Hot Beverages",
+      "Baked Goods",
+      "Lunch",
+      "Cold Beverages"
+    ]
+  } else if (time > 11 && time <= 2) {
+    order = [
+      "Lunch",
+      "Hot Beverages",
+      "Baked Goods",
+      "Breakfast",
+      "Cold Beverages"
+    ]
+  } else {
+    order = [
+      "Baked Goods",
+      "Hot Beverages",
+      "Cold Beverages",
+      "Breakfast",
+      "Lunch"
+    ]
+  }
+
   const PULL_DATA = gql`
     query {
       allSections(where: { _id_not: "2b3f7af1-9526-419b-9de7-248fe4d5c006" }) {
@@ -118,7 +142,7 @@ const SanityData = ({ language }) => {
   return (
     <Body>
       {order.map(name => {
-        return <div>{changedSections[name].name.en}</div>
+        return <div>{console.log(changedSections[name].name.en)}</div>
       })}
       {/* {console.log(data)} */}
       {/* {console.log("All Data: ", Object.values(data))} */}
