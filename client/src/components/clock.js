@@ -93,7 +93,7 @@ const Clock = () => {
       <BrownSofiaPro>
         Today is {dayOfWeek[currentDay]} {months[currentMonth]} {currentDate},
         <span> </span>
-        {currentYear} and the local time is currenlty {currentHour}:{currentMin}
+        {currentYear} and the local time is currently {currentHour}:{currentMin}
       </BrownSofiaPro>
     </div>
   )
