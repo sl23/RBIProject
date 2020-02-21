@@ -145,7 +145,7 @@ const SanityData = ({ language }) => {
   return (
     <Body>
       {order.map(name => {
-        return <div>{changedSections[name].name.en}</div>
+        return <div>{console.log(changedSections[name].name.en)}</div>
       })}
       {/* {console.log(data)} */}
       {/* {console.log("All Data: ", Object.values(data))} */}
