@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import nightIcon from "../assets/animated/night.svg"
 import rainIcon from "../assets/animated/rainy-1.svg"
+import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
 const Weather = () => {
   const [data, setData] = useState(null)
 
@@ -22,12 +23,13 @@ const Weather = () => {
   let iconCode = data.weather[0].icon
   let iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png"
   return (
-    <div>
+    <BrownSofiaPro>
+      Today's Forecast: <span></span>
       {data.weather[0].description}
       <img src={iconURL} />
-      <img src={nightIcon} />
-      <img src={rainIcon} />
-    </div>
+      {/* <img src={nightIcon} />
+      <img src={rainIcon} /> */}
+    </BrownSofiaPro>
   )
 }
 
