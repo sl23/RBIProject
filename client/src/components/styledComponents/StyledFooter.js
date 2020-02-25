@@ -4,5 +4,6 @@ const StyledFooter = styled.footer`
   justify-content: center;
   margin-bottom: 30px;
   margin-top: 30px;
+  width: 100%;
 `
 export default StyledFooter

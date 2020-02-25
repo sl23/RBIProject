@@ -1,6 +1,5 @@
 import styled from "styled-components"
 const Promotion = styled.img`
-  height: 20vh;
-  border-radius: 20px;
+  width: 100%;
 `
 export default Promotion
