@@ -4,7 +4,7 @@ import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
 
 const time = new Date().toLocaleString()
 
-const EngClock = () => {
+const Clock = ({ language }) => {
   const [time, setTime] = useState(new Date().toLocaleString())
   //setTime wil change time variable automatically.
 
@@ -117,4 +117,4 @@ const EngClock = () => {
   )
 }
 
-export default EngClock
+export default Clock
