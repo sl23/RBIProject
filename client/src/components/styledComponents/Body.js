@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const Body = styled.body`
+const Body = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   width: 100%;

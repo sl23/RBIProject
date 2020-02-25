@@ -11,7 +11,6 @@ import { ApolloProvider } from "react-apollo-hooks"
 import apolloClient from "./apolloClient"
 import "./App.css"
 import StyledFooter from "./components/styledComponents/StyledFooter"
-import Head from "./components/head"
 import PromoPage from "./components/PromoPage"
 import Promotion from "./components/styledComponents/Promotion"
 import StyledHeader from "./components/styledComponents/StyledHeader"
@@ -35,7 +34,6 @@ function App() {
   const setCookie = lang => {
     return (document.cookie = `language=${lang}`)
   }
-  console.log(langCookie)
 
   const changeLanguage = () => {
     if (language === "en") {
@@ -75,7 +73,6 @@ function App() {
           <div>
             <Switch>
               <Route exact path="/">
-                <Head />
                 <StyledHeader>
                   <Logo src="./assets/logo/thlogo.png" />
 

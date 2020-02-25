@@ -14,12 +14,12 @@ import LoadingScreen from "./styledComponents/LoadingScreen"
 import LoaderGIF from "./styledComponents/LoaderGif"
 
 const SanityData = ({ language }) => {
-  const time = new Date().getHours()
+  // const time = 15
+  // const temp = 291
   const { weatherData } = useContext(WeatherContext)
+  const time = new Date().getHours()
   let temp = weatherData.main.temp
   let order = []
-
-  // day part adjustments
 
   if (time > 4 && time <= 11 && temp < 290) {
     order = [
@@ -37,7 +37,7 @@ const SanityData = ({ language }) => {
       "Baked Goods",
       "Lunch"
     ]
-  } else if (time > 11 && time <= 2 && temp < 290) {
+  } else if (time > 11 && time <= 14 && temp < 290) {
     order = [
       "Lunch",
       "Hot Beverages",
@@ -45,7 +45,7 @@ const SanityData = ({ language }) => {
       "Breakfast",
       "Cold Beverages"
     ]
-  } else if (time > 11 && time <= 2 && temp >= 290) {
+  } else if (time > 11 && time <= 14 && temp >= 290) {
     order = [
       "Lunch",
       "Cold Beverages",
@@ -53,13 +53,21 @@ const SanityData = ({ language }) => {
       "Breakfast",
       "Hot Beverages"
     ]
+  } else if (temp >= 290) {
+    order = [
+      "Baked Goods",
+      "Lunch",
+      "Hot Beverages",
+      "Cold Beverages",
+      "Breakfast"
+    ]
   } else {
     order = [
       "Baked Goods",
-      "Hot Beverages",
+      "Lunch",
       "Cold Beverages",
-      "Breakfast",
-      "Lunch"
+      "Hot Beverages",
+      "Breakfast"
     ]
   }
 
@@ -134,7 +142,6 @@ const SanityData = ({ language }) => {
   const { loading, error, data } = useQuery(PULL_DATA)
 
   if (loading) {
-    console.log("Loading")
     return (
       <LoadingScreen>
         <LoaderGIF src={require("../assets/logo/LogoLoader.gif")} />
@@ -147,25 +154,17 @@ const SanityData = ({ language }) => {
 
     return <div>Error...</div>
   }
-  // console.log("DATA: ", data)
-  // console.log("DATA[0]: ", data[0])
 
   const changedSections = data.allSections.reduce((acc, section) => {
     acc[section.name.en] = section
-    console.log("acc:", acc)
+
     return acc
   }, {})
-  console.log("DATA All Sections: ", changedSections)
 
-  // useEffect(() => {
-  //   // data = [].concat(data).sort((a, b) => )
-  // })
   return (
     <Body>
       {Object.values(data).map(sections => {
-        // console.log("All Sections: ", sections)
         return order.map(name => {
-          // console.log("Name: ", changedSections[name].name.en)
           return (
             <div>
               <RedSofiaProBold>
@@ -176,8 +175,6 @@ const SanityData = ({ language }) => {
                 {changedSections[name].options.map(option => {
                   return (
                     <CategoryDisplay>
-                      {/* {console.log("Option: ", option)} */}
-
                       <div>
                         <ProductImg src={option.image.asset.url} />
 
@@ -214,28 +211,6 @@ const SanityData = ({ language }) => {
                                       <td>{pickerAspect.name[language]}</td>
                                       {option.options
                                         .filter((item, index) => {
-                                          // console.log("index: ", index)
-                                          // console.log(
-                                          //   "length: ",
-                                          //   option.pickerAspects[0]
-                                          //     .pickerAspectOptions.length
-                                          // )
-                                          // console.log("pindex: ", pindex)
-                                          // console.log(
-                                          //   "Upper ",
-                                          //   "index: ",
-                                          //   index,
-                                          //   option.pickerAspects[0]
-                                          //     .pickerAspectOptions.length *
-                                          //     (pindex + 1)
-                                          // )
-                                          // console.log(
-                                          //   "Lower: ",
-                                          //   "index: ",
-                                          //   index,
-                                          //   option.pickerAspects[0]
-                                          //     .pickerAspectOptions.length * pindex
-                                          // )
                                           return (
                                             index <
                                               option.pickerAspects[0]
