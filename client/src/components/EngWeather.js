@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useContext } from "react"
 import nightIcon from "../assets/animated/night.svg"
 import dayIcon from "../assets/animated/day.svg"
 import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
@@ -12,59 +12,48 @@ import snow from "../assets/animated/snowy-5.svg"
 import thunderstorm from "../assets/animated/thunder.svg"
 import CenteringDiv from "./styledComponents/CenteringDiv"
 import WeatherIcon from "./styledComponents/WeatherIcon"
+import WeatherContext from "./WeatherContext"
 
 const EngWeather = () => {
-  const [data, setData] = useState(null)
-
-  async function fetchData() {
-    const res = await fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=Toronto,ca&appid=e9f0e581ccb5c2ab0d655878c8cdc745"
-    )
-    res
-      .json()
-      .then(res => setData(res))
-      .catch(error => console.log(error))
-  }
+  const { weatherData } = useContext(WeatherContext)
 
   const time = new Date()
   const hour = time.getHours()
-  useEffect(() => {
-    fetchData()
-  }, [])
 
-  if (!data) return <div>Loading...</div>
-  let iconCode = data.weather[0].icon
+  if (!weatherData) return <div>Loading...</div>
+  let iconCode = weatherData.weather[0].icon
   let iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png"
-  let main = data.weather[0].main
+  let main = weatherData.weather[0].main
+  let description = weatherData.weather[0].description
 
   return (
     <CenteringDiv>
       <BrownSofiaPro>
         Today's Forecast:<span> </span>
-        {data.weather[0].description}
+        {description}
       </BrownSofiaPro>
       {(function() {
-        if (main == "Clear" && hour < 18 && hour > 6) {
+        if (main === "Clear" && hour < 18 && hour > 6) {
           return <WeatherIcon src={dayIcon} />
-        } else if (main == "Clear" && hour > 18) {
+        } else if (main === "Clear" && hour > 18) {
           return <WeatherIcon src={nightIcon} />
-        } else if (main == "Clear" && hour > 0 && hour < 6) {
+        } else if (main === "Clear" && hour > 0 && hour < 6) {
           return <WeatherIcon src={nightIcon} />
-        } else if (main == "Clouds" && hour < 18 && hour > 6) {
+        } else if (main === "Clouds" && hour < 18 && hour > 6) {
           return <WeatherIcon src={cloudDay} />
-        } else if (main == "Clouds" && hour > 18) {
+        } else if (main === "Clouds" && hour > 18) {
           return <WeatherIcon src={cloudyNight} />
-        } else if (main == "Rain" && iconCode == 500) {
+        } else if (description === "light rain") {
           return <WeatherIcon src={rain1} />
-        } else if (main == "Rain" && iconCode == 501) {
+        } else if (description === "moderate rain") {
           return <WeatherIcon src={rain2} />
-        } else if (main == "Rain" && iconCode == 503) {
+        } else if (description === "heavy rain") {
           return <WeatherIcon src={rain6} />
-        } else if (main == "Rain" && iconCode == 504) {
+        } else if (description === "extreme rain") {
           return <WeatherIcon src={rain7} />
-        } else if (main == "Snow") {
+        } else if (main === "Snow") {
           return <WeatherIcon src={snow} />
-        } else if (main == "Thunderstorm") {
+        } else if (main === "Thunderstorm") {
           return <WeatherIcon src={thunderstorm} />
         } else {
           return <WeatherIcon src={iconURL} />

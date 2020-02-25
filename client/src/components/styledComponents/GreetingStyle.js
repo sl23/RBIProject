@@ -4,6 +4,6 @@ const GreetingStyle = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 40vh;
+  height: 30vh;
 `
 export default GreetingStyle

@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useContext } from "react"
+import WeatherContext from "./WeatherContext"
+
 import { useQuery } from "react-apollo-hooks"
 import gql from "graphql-tag"
 import CategoryDisplay from "./styledComponents/categoryDisplay"
@@ -13,11 +15,13 @@ import LoaderGIF from "./styledComponents/LoaderGif"
 
 const SanityData = ({ language }) => {
   const time = new Date().getHours()
-  console.log("time: ", time)
-
+  const { weatherData } = useContext(WeatherContext)
+  let temp = weatherData.main.temp
   let order = []
 
-  if (time > 4 && time <= 11) {
+  // day part adjustments
+
+  if (time > 4 && time <= 11 && temp < 290) {
     order = [
       "Breakfast",
       "Hot Beverages",
@@ -25,13 +29,29 @@ const SanityData = ({ language }) => {
       "Lunch",
       "Cold Beverages"
     ]
-  } else if (time > 11 && time <= 2) {
+  } else if (time > 4 && time <= 11 && temp >= 290) {
+    order = [
+      "Breakfast",
+      "Cold Beverages",
+      "Hot Beverages",
+      "Baked Goods",
+      "Lunch"
+    ]
+  } else if (time > 11 && time <= 2 && temp < 290) {
     order = [
       "Lunch",
       "Hot Beverages",
       "Baked Goods",
       "Breakfast",
       "Cold Beverages"
+    ]
+  } else if (time > 11 && time <= 2 && temp >= 290) {
+    order = [
+      "Lunch",
+      "Cold Beverages",
+      "Baked Goods",
+      "Breakfast",
+      "Hot Beverages"
     ]
   } else {
     order = [
@@ -132,6 +152,7 @@ const SanityData = ({ language }) => {
 
   const changedSections = data.allSections.reduce((acc, section) => {
     acc[section.name.en] = section
+    console.log("acc:", acc)
     return acc
   }, {})
   console.log("DATA All Sections: ", changedSections)
@@ -144,8 +165,6 @@ const SanityData = ({ language }) => {
       {order.map(name => {
         return <div>{console.log(changedSections[name].name.en)}</div>
       })}
-      {/* {console.log(data)} */}
-      {/* {console.log("All Data: ", Object.values(data))} */}
 
       {Object.values(data).map(sections => {
         // console.log("All Sections: ", sections)
@@ -169,7 +188,7 @@ const SanityData = ({ language }) => {
                         <BrownSofiaPro>{option.name[language]}</BrownSofiaPro>
 
                         {/* conditional rendering to display different things based on whether its a section/item */}
-                        {option._type == "picker" && (
+                        {option._type === "picker" && (
                           <StyledTable>
                             <tr>
                               {option.pickerAspects[1] != null && (
@@ -253,18 +272,15 @@ const SanityData = ({ language }) => {
                               option.options.map(item => {
                                 return (
                                   <td>
-                                    {/* {console.log(item.option)}$ */}$
-                                    {item.option.prices[0].price} <br />
+                                    ${item.option.prices[0].price} <br />
                                     {item.option.nutrition.calories} Cals
                                   </td>
                                 )
                               })}
                           </StyledTable>
                         )}
-                        {option._type == "item" && (
+                        {option._type === "item" && (
                           <div>
-                            {/* {console.log("item: ", option)}
-                            {console.log("price: ", option.prices[0].price)}$ */}
                             ${option.prices[0].price}
                             <br />
                             {option.nutrition.calories} Cals

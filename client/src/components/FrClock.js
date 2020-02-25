@@ -53,7 +53,6 @@ const FrClock = () => {
   //hook for life cycle componentwillMount/unmount/update
   return (
     <div>
-      {console.log(currentHour)}
       {currentHour > 4 && currentHour <= 11 && (
         <GreasePencil>Bonjour!</GreasePencil>
       )}

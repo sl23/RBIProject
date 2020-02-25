@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import nightIcon from "../assets/animated/night.svg"
 import dayIcon from "../assets/animated/day.svg"
-
 import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
 import cloudDay from "../assets/animated/cloudy-day.svg"
 import cloudyNight from "../assets/animated/cloudy-night.svg"
@@ -12,60 +11,81 @@ import rain6 from "../assets/animated/rainy-6.svg"
 import snow from "../assets/animated/snowy-5.svg"
 import thunderstorm from "../assets/animated/thunder.svg"
 import CenteringDiv from "./styledComponents/CenteringDiv"
+import WeatherContext from "./WeatherContext"
 import WeatherIcon from "./styledComponents/WeatherIcon"
+import axios from "axios"
 
 const FrWeather = () => {
-  const [data, setData] = useState(null)
-
-  async function fetchData() {
-    const res = await fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=Toronto,ca&appid=e9f0e581ccb5c2ab0d655878c8cdc745"
-    )
-    res
-      .json()
-      .then(res => setData(res))
-      .catch(error => console.log(error))
-  }
+  const { weatherData } = useContext(WeatherContext)
 
   const time = new Date()
   const hour = time.getHours()
-  useEffect(() => {
-    fetchData()
-  }, [])
-
-  if (!data) return <div>Chargement...</div>
-  let iconCode = data.weather[0].icon
+  const [translation, setTranslation] = useState(null)
+  const [url, setUrl] = useState(null)
+  const fetchTranslation = async url => {
+    const result = await axios(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
+    })
+    setTranslation(result.data.data.translations[0].translatedText)
+  }
+  if (!weatherData) return <div>Chargement...</div>
+  let iconCode = weatherData.weather[0].icon
   let iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png"
-  let main = data.weather[0].main
+  let main = weatherData.weather[0].main
+  let description = weatherData.weather[0].description
+
+  const API_KEY = process.env.REACT_APP_GOOGLE_TRANSLATE_API_KEY
+
+  if (!url) {
+    let fromLang = "en"
+    let toLang = "fr"
+    let text = weatherData.weather[0].description
+    let newUrl = `https://translation.googleapis.com/language/translate/v2?key=${API_KEY}`
+    newUrl += "&q=" + encodeURI(text)
+    newUrl += `&source=${fromLang}`
+    newUrl += `&target=${toLang}`
+    setUrl(newUrl)
+    return <div>Chargement...</div>
+  }
+
+  fetchTranslation(url)
+
+  if (!translation) {
+    return <div>Chargement...</div>
+  }
 
   return (
     <CenteringDiv>
-      {/* <BrownSofiaPro>
+      <BrownSofiaPro>
         Prévisions du jour: <span></span>
-        {data.weather[0].description}
-      </BrownSofiaPro> */}
+        {translation}
+      </BrownSofiaPro>
       {(function() {
-        if (main == "Clear" && hour < 18 && hour > 6) {
+        if (main === "Clear" && hour < 18 && hour > 6) {
           return <WeatherIcon src={dayIcon} />
-        } else if (main == "Clear" && hour > 18) {
+        } else if (main === "Clear" && hour > 18) {
           return <WeatherIcon src={nightIcon} />
-        } else if (main == "Clear" && hour > 0 && hour < 6) {
+        } else if (main === "Clear" && hour > 0 && hour < 6) {
           return <WeatherIcon src={nightIcon} />
-        } else if (main == "Clouds" && hour < 18 && hour > 6) {
+        } else if (main === "Clouds" && hour < 18 && hour > 6) {
           return <WeatherIcon src={cloudDay} />
-        } else if (main == "Clouds" && hour > 18) {
+        } else if (main === "Clouds" && hour > 18) {
           return <WeatherIcon src={cloudyNight} />
-        } else if (main == "Rain" && iconCode == 500) {
+        } else if (description === "light rain") {
           return <WeatherIcon src={rain1} />
-        } else if (main == "Rain" && iconCode == 501) {
+        } else if (description === "moderate rain") {
           return <WeatherIcon src={rain2} />
-        } else if (main == "Rain" && iconCode == 503) {
+        } else if (description === "heavy rain") {
           return <WeatherIcon src={rain6} />
-        } else if (main == "Rain" && iconCode == 504) {
+        } else if (description === "extreme rain") {
           return <WeatherIcon src={rain7} />
-        } else if (main == "Snow") {
+        } else if (main === "Snow") {
           return <WeatherIcon src={snow} />
-        } else if (main == "Thunderstorm") {
+        } else if (main === "Thunderstorm") {
           return <WeatherIcon src={thunderstorm} />
         } else {
           return <WeatherIcon src={iconURL} />
