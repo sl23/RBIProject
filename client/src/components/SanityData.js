@@ -162,10 +162,6 @@ const SanityData = ({ language }) => {
   // })
   return (
     <Body>
-      {order.map(name => {
-        return <div>{console.log(changedSections[name].name.en)}</div>
-      })}
-
       {Object.values(data).map(sections => {
         // console.log("All Sections: ", sections)
         return order.map(name => {
@@ -176,7 +172,7 @@ const SanityData = ({ language }) => {
                 {changedSections[name].name[language]}
               </RedSofiaProBold>
 
-              <MenuContainer>
+              <MenuContainer name={changedSections[name].name.en}>
                 {changedSections[name].options.map(option => {
                   return (
                     <CategoryDisplay>
