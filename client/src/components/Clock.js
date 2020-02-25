@@ -4,31 +4,7 @@ import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
 
 const time = new Date().toLocaleString()
 
-// class Clock extends React.Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = {
-//       time: new Date().toLocaleString()
-//     }
-//   }
-//   componentDidMount() {
-//     this.intervalID = setInterval(() => this.tick(), 1000)
-//     // built in JS function that runs a function after the delay
-//   }
-//   componentWillUnmount() {
-//     clearInterval(this.intervalID)
-//   }
-//   tick() {
-//     this.setState({
-//       time: new Date().toLocaleString()
-//     })
-//   }
-//   render() {
-//     return <p className="App-clock">{this.state.time}.</p>
-//   }
-// }
-
-const Clock = ({ language }) => {
+const EngClock = () => {
   const [time, setTime] = useState(new Date().toLocaleString())
   //setTime wil change time variable automatically.
 
@@ -141,4 +117,4 @@ const Clock = ({ language }) => {
   )
 }
 
-export default Clock
+export default EngClock
