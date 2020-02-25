@@ -14,8 +14,14 @@ const FrClock = () => {
     setTime(new Date().toLocaleString())
   }
   const timeNow = new Date()
-  const currentHour = timeNow.getHours()
-  const currentMin = timeNow.getMinutes()
+  let currentHour = timeNow.getHours()
+  let currentMin = timeNow.getMinutes()
+  if (currentHour < 10) {
+    currentHour = `0${currentHour}`
+  }
+  if (currentMin < 10) {
+    currentMin = `0${currentMin}`
+  }
   const currentDay = timeNow.getDay()
   const currentDate = timeNow.getDate()
   const currentYear = timeNow.getFullYear()
