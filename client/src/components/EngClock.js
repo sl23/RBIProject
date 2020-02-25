@@ -38,20 +38,18 @@ const EngClock = () => {
     setTime(new Date().toLocaleString())
   }
   const timeNow = new Date()
-  const currentHour = timeNow.getHours()
-  const currentMin = timeNow.getMinutes()
+  let currentHour = timeNow.getHours()
+  let currentMin = timeNow.getMinutes()
+  if (currentHour < 10) {
+    currentHour = `0${currentHour}`
+  }
+  if (currentMin < 10) {
+    currentMin = `0${currentMin}`
+  }
   const currentDay = timeNow.getDay()
   const currentDate = timeNow.getDate()
   const currentYear = timeNow.getFullYear()
-  const dayOfWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-  ]
+  const dayOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
   const currentMonth = timeNow.getMonth()
   const months = [
     "January",
@@ -78,21 +76,12 @@ const EngClock = () => {
   return (
     <div>
       {console.log(currentHour)}
-      {currentHour > 4 && currentHour <= 11 && (
-        <GreasePencil>Good Morning!</GreasePencil>
-      )}
-      {currentHour > 11 && currentHour <= 17 && (
-        <GreasePencil>Good Afternoon!</GreasePencil>
-      )}
-      {currentHour > 17 && currentHour <= 24 && (
-        <GreasePencil>Good Evening!</GreasePencil>
-      )}
-      {currentHour > 0 && currentHour <= 4 && (
-        <GreasePencil>Hello Night Owl!</GreasePencil>
-      )}
+      {currentHour > 4 && currentHour <= 11 && <GreasePencil>Good Morning!</GreasePencil>}
+      {currentHour > 11 && currentHour <= 17 && <GreasePencil>Good Afternoon!</GreasePencil>}
+      {currentHour > 17 && currentHour <= 24 && <GreasePencil>Good Evening!</GreasePencil>}
+      {currentHour > 0 && currentHour <= 4 && <GreasePencil>Hello Night Owl!</GreasePencil>}
       <BrownSofiaPro>
-        Today is {dayOfWeek[currentDay]}, {months[currentMonth]} {currentDate},
-        <span> </span>
+        Today is {dayOfWeek[currentDay]}, {months[currentMonth]} {currentDate},<span> </span>
         {currentYear}
         <span> </span>and the local time is currently {currentHour}:{currentMin}
       </BrownSofiaPro>
