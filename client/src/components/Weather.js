@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import nightIcon from "../assets/animated/night.svg"
 import dayIcon from "../assets/animated/day.svg"
-
 import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
 import cloudDay from "../assets/animated/cloudy-day.svg"
 import cloudyNight from "../assets/animated/cloudy-night.svg"
@@ -14,7 +13,7 @@ import thunderstorm from "../assets/animated/thunder.svg"
 import CenteringDiv from "./styledComponents/CenteringDiv"
 import WeatherIcon from "./styledComponents/WeatherIcon"
 
-const FrWeather = () => {
+const Weather = ({ language }) => {
   const [data, setData] = useState(null)
 
   async function fetchData() {
@@ -26,46 +25,55 @@ const FrWeather = () => {
       .then(res => setData(res))
       .catch(error => console.log(error))
   }
-
   const time = new Date()
   const hour = time.getHours()
   useEffect(() => {
     fetchData()
   }, [])
 
-  if (!data) return <div>Chargement...</div>
+  if (!data) {
+    if (language === "fr") {
+      return <div>Chargement...</div>
+    } else {
+      return <div>Loading...</div>
+    }
+  }
   let iconCode = data.weather[0].icon
   let iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png"
   let main = data.weather[0].main
 
   return (
     <CenteringDiv>
-      {/* <BrownSofiaPro>
-        Prévisions du jour: <span></span>
-        {data.weather[0].description}
-      </BrownSofiaPro> */}
+      {language === "en" ? (
+        <BrownSofiaPro>
+          Today's Forecast:<span> </span>
+          {data.weather[0].description}
+        </BrownSofiaPro>
+      ) : (
+        false
+      )}
       {(function() {
-        if (main == "Clear" && hour < 18 && hour > 6) {
+        if (main === "Clear" && hour < 18 && hour > 6) {
           return <WeatherIcon src={dayIcon} />
-        } else if (main == "Clear" && hour > 18) {
+        } else if (main === "Clear" && hour > 18) {
           return <WeatherIcon src={nightIcon} />
-        } else if (main == "Clear" && hour > 0 && hour < 6) {
+        } else if (main === "Clear" && hour > 0 && hour < 6) {
           return <WeatherIcon src={nightIcon} />
-        } else if (main == "Clouds" && hour < 18 && hour > 6) {
+        } else if (main === "Clouds" && hour < 18 && hour > 6) {
           return <WeatherIcon src={cloudDay} />
-        } else if (main == "Clouds" && hour > 18) {
+        } else if (main === "Clouds" && hour > 18) {
           return <WeatherIcon src={cloudyNight} />
-        } else if (main == "Rain" && iconCode == 500) {
+        } else if (main === "Rain" && iconCode === 500) {
           return <WeatherIcon src={rain1} />
-        } else if (main == "Rain" && iconCode == 501) {
+        } else if (main === "Rain" && iconCode === 501) {
           return <WeatherIcon src={rain2} />
-        } else if (main == "Rain" && iconCode == 503) {
+        } else if (main === "Rain" && iconCode === 503) {
           return <WeatherIcon src={rain6} />
-        } else if (main == "Rain" && iconCode == 504) {
+        } else if (main === "Rain" && iconCode === 504) {
           return <WeatherIcon src={rain7} />
-        } else if (main == "Snow") {
+        } else if (main === "Snow") {
           return <WeatherIcon src={snow} />
-        } else if (main == "Thunderstorm") {
+        } else if (main === "Thunderstorm") {
           return <WeatherIcon src={thunderstorm} />
         } else {
           return <WeatherIcon src={iconURL} />
@@ -75,4 +83,4 @@ const FrWeather = () => {
   )
 }
 
-export default FrWeather
+export default Weather

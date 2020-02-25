@@ -169,7 +169,7 @@ const SanityData = ({ language }) => {
                         <BrownSofiaPro>{option.name[language]}</BrownSofiaPro>
 
                         {/* conditional rendering to display different things based on whether its a section/item */}
-                        {option._type == "picker" && (
+                        {option._type === "picker" && (
                           <StyledTable>
                             <tr>
                               {option.pickerAspects[1] != null && (
@@ -261,7 +261,7 @@ const SanityData = ({ language }) => {
                               })}
                           </StyledTable>
                         )}
-                        {option._type == "item" && (
+                        {option._type === "item" && (
                           <div>
                             {/* {console.log("item: ", option)}
                             {console.log("price: ", option.prices[0].price)}$ */}
