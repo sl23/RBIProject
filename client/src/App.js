@@ -83,11 +83,6 @@ function App() {
                     EN/FR
                   </StyledButton>
                 </StyledHeader>
-                {/* <Body>
-                {Object.keys(menuData).map(key => {
-                  return <ItemComponent type={key} />
-                })}
-              </Body> */}
                 <GreetingStyle>
                   <Greeting language={langExtractor} />
                 </GreetingStyle>
