@@ -13,5 +13,10 @@ const StyledButton = styled.button`
   cursor: pointer;
   padding: 5px 10px;
   margin: 5px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 100%;
+    padding: 5px 5px;
+  }
 `
 export default StyledButton
