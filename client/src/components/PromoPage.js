@@ -53,6 +53,17 @@ const PromoPage = ({ language }) => {
   `
 
   const { loading, error, data } = useQuery(PULL_DATA)
+  if (language === "fr") {
+    if (loading) {
+      console.log("Loading")
+      return <div>Chargement...</div>
+    }
+
+    if (error) {
+      console.log(error)
+      return <div>Erreur</div>
+    }
+  }
   if (loading) {
     console.log("Loading")
     return <div>Loading...</div>
@@ -62,6 +73,7 @@ const PromoPage = ({ language }) => {
     console.log(error)
     return <div>Error</div>
   }
+
   return (
     <PromoBodyStyle>
       <StyledHeader>
@@ -89,9 +101,9 @@ const PromoPage = ({ language }) => {
         })}
       </MainPageStyle>
       <PromoFooter>
-        Nutella® is a registered trademark of Ferrero S.p.A. All rights
-        reserved. At participating restaurants for a limited time. TM & © Tim
-        Hortons, 2020
+        {language === "fr"
+          ? "Nutella® est une marque déposée de Ferrero S.p.A. Tous droits réservés. Dans les restaurants participants pour une durée limitée. TM & © Tim Hortons, 2020"
+          : "Nutella® is a registered trademark of Ferrero S.p.A. All rights reserved. At participating restaurants for a limited time. TM & © Tim Hortons, 2020"}
       </PromoFooter>
     </PromoBodyStyle>
   )
