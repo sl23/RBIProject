@@ -53,11 +53,20 @@ const PromoPage = ({ language }) => {
   `
 
   const { loading, error, data } = useQuery(PULL_DATA)
+  if (language === "fr") {
+    if (loading) {
+      console.log("Loading")
+      return <div>Chargement...</div>
+    }
+    if (error) {
+      console.log(error)
+      return <div>Erreur</div>
+    }
+  }
   if (loading) {
     console.log("Loading")
     return <div>Loading...</div>
   }
-
   if (error) {
     console.log(error)
     return <div>Error</div>

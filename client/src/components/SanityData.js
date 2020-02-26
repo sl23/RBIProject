@@ -12,6 +12,7 @@ import BrownSofiaPro from "./styledComponents/BrownSofiaPro"
 import Body from "./styledComponents/Body"
 import LoadingScreen from "./styledComponents/LoadingScreen"
 import LoaderGIF from "./styledComponents/LoaderGif"
+import BrownSofiaProProductName from "./styledComponents/BrownSofiaProProductName"
 
 const SanityData = ({ language }) => {
   // const time = 15
@@ -178,7 +179,9 @@ const SanityData = ({ language }) => {
                       <div>
                         <ProductImg src={option.image.asset.url} />
 
-                        <BrownSofiaPro>{option.name[language]}</BrownSofiaPro>
+                        <BrownSofiaProProductName>
+                          {option.name[language]}
+                        </BrownSofiaProProductName>
 
                         {/* conditional rendering to display different things based on whether its a section/item */}
                         {option._type === "picker" && (

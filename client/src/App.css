@@ -1,16 +1,3 @@
-/* USE THESE CSS PROPERTIES TO APPLY FONT STYLES IN YOUR STYLED COMPONENT */
-/* Sofia Pro Black {
-  font-family: "Sofia Pro";
-  font-weight: 900;
-  font-style: normal;
+html {
+  font-size: 14pt;
 }
- Sofia Pro Bold {
-  font-family: "Sofia Pro";
-  font-weight: bold;
-  font-style: normal;
-}
-  Grease Pencil {
-  font-family: "Grease Pencil";
-  font-weight: normal;
-  font-style: normal;
-  color: black; */
