@@ -11,6 +11,7 @@ import BrownSofiaProPromo from "./styledComponents/promotionStyling/BrownSofiaPr
 import PromoComponent from "./styledComponents/promotionStyling/PromoComponent"
 import MainPageStyle from "./styledComponents/promotionStyling/MainPageStyle"
 import PromoBodyStyle from "./styledComponents/promotionStyling/PromoBodyStyle"
+import PromoText from "./styledComponents/promotionStyling/PromoText"
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",

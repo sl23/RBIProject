@@ -17,6 +17,7 @@ import StyledHeader from "./components/styledComponents/StyledHeader"
 import Logo from "./components/styledComponents/Logo"
 import SanityData from "./components/SanityData"
 import GreetingStyle from "./components/styledComponents/GreetingStyle"
+import GreasePencil from "./components/styledComponents/GreasePencil"
 import Greeting from "./components/Greeting"
 import StyledButton from "./components/styledComponents/StyledButton"
 // import WeatherData from "./components/WeatherData"
@@ -84,6 +85,11 @@ function App() {
                   <Greeting language={langExtractor} />
                 </GreetingStyle>
                 <SanityData language={langExtractor} />
+                <GreasePencil>
+                  {language === "en"
+                    ? `Current Promotions`
+                    : `Promotions en cours`}
+                </GreasePencil>
                 <Link to="/promotion">
                   <StyledFooter>
                     <Promotion src="./assets/promotion/nutella/nutellaPromo.jpg" />
