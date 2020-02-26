@@ -92,7 +92,11 @@ function App() {
                 </GreasePencil>
                 <Link to="/promotion">
                   <StyledFooter>
-                    <Promotion src="./assets/promotion/nutella/nutellaPromo.jpg" />
+                    {language === "en" ? (
+                      <Promotion src="./assets/promotion/nutella/nutellaPromo.jpg" />
+                    ) : (
+                      <Promotion src="./assets/promotion/nutella/nutellaPromoFR.jpg" />
+                    )}
                   </StyledFooter>
                 </Link>
               </Route>
