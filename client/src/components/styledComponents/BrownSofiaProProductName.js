@@ -5,6 +5,6 @@ const BrownSofiaProProductName = styled.h2`
   font-weight: 400;
   font-style: normal;
   color: #492a22;
-  font-size: 2.5em;
+  font-size: 1.5em;
 `
 export default BrownSofiaProProductName

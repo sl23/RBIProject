@@ -23,7 +23,7 @@ const MenuContainer = styled.div`
           width: 50%;
         }
       }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 805px) {
         & > div {
           width: 100%;
         }
@@ -41,7 +41,7 @@ const MenuContainer = styled.div`
           width: 50%;
         }
       }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 805px) {
         & > div {
           width: 100%;
         }
