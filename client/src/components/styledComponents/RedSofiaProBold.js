@@ -6,6 +6,8 @@ const RedSofiaProBold = styled.h1`
   color: #c8102e;
   font-size: 1.5em;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  z-index: 5;
 `
 export default RedSofiaProBold
