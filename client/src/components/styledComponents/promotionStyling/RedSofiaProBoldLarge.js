@@ -7,11 +7,11 @@ const RedSofiaProBoldLarge = styled.h1`
   font-size: 3em;
   @media screen and (max-width: 1400px) {
     margin: auto;
-    font-size: 2em;
+    font-size: 2.3em;
   }
   @media screen and (max-width: 600px) {
     margin: auto;
-    font-size: 1.5em;
+    font-size: 1.8em;
   }
 `
 export default RedSofiaProBoldLarge
